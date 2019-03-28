@@ -1,0 +1,207 @@
+*{
+	outline: 0!important;
+}
+.invalid {
+	width: 100%;
+	margin-top: 0.25rem;
+	font-size: 80%;
+	color: #FD8995;
+  }
+.top-space
+{
+	margin-top: 20px;
+}
+.bottom-space
+{
+	margin-bottom: 20px;	
+}
+a.viewwebsitelink span.viewwebsite
+{
+	color: white !important;
+}
+.w-auto
+{
+	width:auto !important;
+}
+.f-active-default
+{
+	background: #ff97a6 !important;
+}
+.f-active-default:hover{
+	background: #fb8092 !important;
+}
+.credit-outer p {
+
+    font-size: 11px !important;
+    color: #959595;
+
+}
+.credit-outer h6
+{
+	margin-top: 0 !important;
+}
+
+.success-box img {
+	margin-right:10px;
+	display:inline-block;
+	vertical-align:top;
+  }
+  
+  .success-box > div {
+	vertical-align:top;
+	display:inline-block;
+	color:#888;
+  }
+  
+  
+  
+  /* Rating Star Widgets Style */
+  .rating-stars ul {
+	list-style-type:none;
+	padding:0;
+	
+	-moz-user-select:none;
+	-webkit-user-select:none;
+  }
+  .rating-stars ul > li.star {
+	display:inline-block;
+	
+  }
+  
+  /* Idle State of the stars */
+  .rating-stars ul > li.star > i.fa {
+	font-size:2.5em; /* Change the size of the stars */
+	color:#ccc; /* Color on idle state */
+  }
+  
+  /* Hover state of the stars */
+  .rating-stars ul > li.star.hover > i.fa {
+	color:#FFCC36;
+  }
+  
+  /* Selected state of the stars */
+  .rating-stars ul > li.star.selected > i.fa {
+	color:#FF912C;
+  }
+
+.ui-datepicker-calendar tbody tr td a{
+	 	display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.clear_all{
+	cursor: pointer;
+	display: none;
+	color: #fd6e84;
+	font-size: 12px;
+}
+
+
+
+
+
+/* Rating Star Widgets Style */
+.rated-stars ul {
+	list-style-type:none;
+	padding:0;
+	
+	-moz-user-select:none;
+	-webkit-user-select:none;
+  }
+  .rated-stars ul > li.stared {
+	display:inline-block;
+	
+  }
+  
+  /* Idle State of the stars */
+  .rated-stars ul > li.stared > i.fa {
+	font-size:1em; /* Change the size of the stars */
+	color:#ccc; /* Color on idle state */
+  }
+  
+  /* Selected state of the stars */
+  .rated-stars ul > li.stared.selected > i.fa {
+	color:#FF912C;
+  }
+	.datepicker-outer .hasDatepicker
+	{
+		width: 100%;
+	}
+	.datepicker-outer .ui-datepicker-inline
+	{
+		width: 100%;
+	}
+	.add-time-list{
+		height: 230px;
+		overflow-y: auto;
+	}
+	.datepicker-outer .ui-widget-header {
+    border: 0 !important;
+    background: #dcaad7 !important;
+}
+.datepicker-outer .ui-datepicker-next.ui-corner-all:hover {
+	background: #fff;
+	border: none;
+}
+.datepicker-outer .ui-datepicker-prev.ui-corner-all:hover {
+	background: #fff;
+	border: none;
+}
+.datepicker-outer .ui-widget-header {
+	color: #fff;
+	font-weight: bold;
+}
+.datepicker-outer .ui-widget-content {
+	border: 0 !important;
+	background: #b4ddd9 !important;
+	color: #424242;
+}
+.datepicker-outer .ui-state-highlight, .datepicker-outer .ui-widget-content .ui-state-highlight, .datepicker-outer .ui-widget-header .ui-state-highlight {
+	border: 1px solid #ff97a6;
+	background: #ff97a6;
+	color: #fff;
+}
+.datepicker-outer .ui-state-active, .datepicker-outer.ui-widget-content .ui-state-active, .datepicker-outer .ui-widget-header .ui-state-active, .datepicker-outer a.ui-button:active, .datepicker-outer .ui-button:active, .datepicker-outer .ui-button.ui-state-active:hover {
+	border: 1px solid #fff;
+	background: #bdbdbd;
+	font-weight: normal;
+	color: #fff;
+}
+.datepicker-outer .ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+	background: #dcaad7 none;
+	color: #fff;
+	border: solid 1px #fff;
+}
+.add-time-list i {
+	color: #ff6464;
+	float: right;
+	cursor: pointer;
+}
+.add-time-list p {
+	font-weight: 600;
+	font-size: 14px;
+	padding: 10px;
+	background: #f3f3f3;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.msg-notification
+{
+		display: inline-block;
+    padding: 1px 10px;
+    background: #ff4e4e;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 20px;
+    position: relative;
+    top: -2px;
+}
+.break-word
+{
+	word-break: break-word;
+}
+.d-inline-block
+{
+	display: inline-block !important;
+}
