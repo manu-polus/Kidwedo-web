@@ -23,11 +23,12 @@ Profile
 						        <div class="col-lg-12">
 							        <div class="row">
 								        <div class="col-lg-12 profile-outer">
-									        <h5>PROFILE</h5>
+											<h5 class="m-0">PROFIL</h5>
+											<div class="w-100">
 									        <div class="prof-form">
 												<div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        Business Name
+													Unternehmen
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
 													<input id="business_name" type="text" class="custom-input" name="business_name" value="{{ $partner->business_name }}" placeholder="Business Name" required autofocus>
@@ -80,10 +81,10 @@ Profile
 										        </div>
 												<div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        Picture
+													Bild
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-                                                        <input type="file" placeholder="Picture" name="picture">
+                                                        <input type="file" placeholder="Bild" name="picture">
 														@if ($errors->has('picture'))
 														<br>
                           							        <span class="invalid" role="alert">
@@ -94,10 +95,10 @@ Profile
 										        </div>
 												<div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        About
+													Über
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-														<textarea id="about" type="text" class="form-control" name="about" style="resize: none;" rows="5" placeholder="About business">{{ $partner->description }}</textarea>
+														<textarea id="about" type="text" class="form-control bg-transparent" name="about" style="resize: none;" rows="5" placeholder="Über das Geschäft">{{ $partner->description }}</textarea>
                                             			@if ($errors->has('about'))
                           							        <span class="invalid" role="alert">
                               							        <strong>{{ $errors->first('about') }}</strong>
@@ -107,18 +108,18 @@ Profile
 										        </div>
 												<div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        Website
+												        Webseite
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-                                                        <input type="text" class="custom-input" placeholder="Website" name="website" value="{{ $partner->website }}">
+                                                        <input type="text" class="custom-input" placeholder="Webseite" name="website" value="{{ $partner->website }}">
                                                     </div>
 										        </div>
 										        <div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        Telefonnumber
+													Telefonnummer
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-                                                        <input type="text" class="custom-input" placeholder="Telefonnumber" name="phone" value="{{ Auth::user()->mobile_number }}">
+                                                        <input type="text" class="custom-input" placeholder="Telefonnummer" name="phone" value="{{ Auth::user()->mobile_number }}">
                                                         @if ($errors->has('phone'))
                           							        <span class="invalid" role="alert">
                               							        <strong>{{ $errors->first('phone') }}</strong>
@@ -131,7 +132,7 @@ Profile
 														Adresse
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-														<textarea id="address" type="text" class="form-control" name="address" style="resize: none;" rows="5" placeholder="Adresse" required>{{ Auth::user()->address }}</textarea>
+														<textarea id="address" type="text" class="form-control bg-transparent" name="address" style="resize: none;" rows="5" placeholder="Adresse" required>{{ Auth::user()->address }}</textarea>
                                             		</div>
 												</div>
 												<div class="form-group row">
@@ -147,7 +148,8 @@ Profile
                                             		@endif
 											        </div>
 										        </div>
-                                            </div>
+											</div>
+											</div>
 								        </div>
 								
 							        </div>

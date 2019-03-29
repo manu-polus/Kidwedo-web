@@ -583,7 +583,16 @@ button:focus
 {
 	width: 80%;
 	margin:auto;
-	margin-bottom: 40px;
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+.prof-form .col-lg-4
+{
+	color: #ff7387;
+}
+.bg-transparent
+{
+	background: transparent;
 }
 .my-account i
 {
@@ -821,6 +830,13 @@ button:focus
 	font-size: 18px;
 	font-weight: 600;
 	color: #ff7387;
+}
+.f-listing-description h4 a:hover
+{
+	
+	color: #ffa3b1;
+	cursor: pointer;
+	text-decoration: none;
 }
 .f-av
 {
@@ -1294,6 +1310,8 @@ button:focus
     margin-bottom: 0px;
 	margin-bottom: 0px;
 	border-bottom: solid 1px #ff97a6;
+	color: #ff7387;
+    font-weight: 600;
  }
  .user-msg-icon i
  {

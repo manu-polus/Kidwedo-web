@@ -113,7 +113,10 @@ Add Activity
 				<div class="col-lg-6">
 					<div class="form-group">
 						<label class="bold-600">Kosten</label>
+						<div class="input-icon-outer">
 						<input type="text" class="custom-input" placeholder="Kosten" name="credits" value="{{ old('credits') }}">
+						<i class="fas fa-euro-sign"></i>
+						</div>
 						@if ($errors->has('credits'))
 									<span class="invalid" role="alert">
 										<strong>{{ $errors->first('credits') }}</strong>
@@ -125,11 +128,15 @@ Add Activity
 					<div class="form-group">
 							<label  class="bold-600">Ankommen</label>
 							<!-- <input type="text" class="custom-input" placeholder="Ankommen" name="arrive_before" value="{{ old('arrive_before') }}"> -->
-							Before<select name="arrive_before" id="" class="custom-select custom-select-box">
-								<option value="">5 minutes</option>
-								<option value="">15 minutes</option>
-								<option value="">30 minutes</option>
-							</select>
+							<div class="nowwrap">
+								<label class="sub-label">Davor</label>
+
+								<select name="arrive_before" id="" class="custom-select custom-select-box">
+										<option value="">5 minutes</option>
+										<option value="">15 minutes</option>
+										<option value="">30 minutes</option>
+									</select>
+									</div>
 							@if ($errors->has('arrive_before'))
 										<span class="invalid" role="alert">
 											<strong>{{ $errors->first('arrive_before') }}</strong>
@@ -141,11 +148,14 @@ Add Activity
 				<div class="col-lg-6">
 					<div class="form-group">
 						<label  class="bold-600">Stornierungsbedingungen</label>
+						<div class="nowwrap">
+						<label class="sub-label">Davor</label>
 						<!-- <input type="text" class="custom-input" placeholder="Stornierungsbedingungen" name="cancel_policy" value="{{ old('cancel_policy') }}"> -->
-						Advance<select name="cancel_policy" id="" class="custom-select custom-select-box">
+						<select name="cancel_policy" id="" class="custom-select custom-select-box">
 							<option value="">1 hour</option>
 							<option value="">5 hours</option>
 						</select>
+</div>
 						@if ($errors->has('cancel_policy'))
 						<span class="invalid" role="alert">
 							<strong>{{ $errors->first('cancel_policy') }}</strong>

@@ -23,7 +23,8 @@ Profile
 						        <div class="col-lg-12">
 							        <div class="row">
 								        <div class="col-lg-12 profile-outer">
-									        <h5>PROFILE</h5>
+											<h5 class="m-0">PROFIL</h5>
+											<div class="w-100">
 									        <div class="prof-form">
                                     
 										        <div class="form-group row">
@@ -62,7 +63,7 @@ Profile
 												</div>
 												<div class="form-group row">
 											        <div class="col-lg-4 col-sm-6">
-												        Telefonnumber
+													Telefonnummer
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
                                                         <input type="text" class="custom-input" placeholder="Telefonnumber" name="phone" value="{{ Auth::user()->mobile_number }}">
@@ -73,15 +74,16 @@ Profile
                         						        @endif
 											        </div>
 										        </div>
-										        <div class="form-group row">
+										        <div class="form-group row mb-0">
 											        <div class="col-lg-4 col-sm-6">
 														Adresse
 											        </div>
 											        <div class="col-lg-8 col-sm-6">
-														<textarea id="address" type="text" class="form-control" name="address" style="resize: none;" rows="5" placeholder="Adresse">{{ Auth::user()->address }}</textarea>
+														<textarea id="address" type="text" class="form-control bg-transparent" name="address" style="resize: none;" rows="5" placeholder="Adresse">{{ Auth::user()->address }}</textarea>
                                             		</div>
 										        </div>
-                                            </div>
+											</div>
+</div>
 								        </div>
 								
 							        </div>
