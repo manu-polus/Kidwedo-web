@@ -29,7 +29,7 @@
 				$edit_url = route('activity.edit',['id' => $event->id ]);
 				$delete_url = route('activity.delete',['id' => $event->id ]);
 			@endphp
-			<button type="button" class="kid-btn small-btn" onclick="location.href='{{$edit_url}}'">bearbeiten</button>&nbsp;
+			<button type="button" class="kid-btn small-btn bg-color-2 bd-color-2" onclick="location.href='{{$edit_url}}'">bearbeiten</button>&nbsp;
 			<button type="button" class="kid-btn small-btn delete-button" data-del="{{$delete_url}}" onclick="deleteActivity($(this))">löschen</button>
 		</div>
 	</div>

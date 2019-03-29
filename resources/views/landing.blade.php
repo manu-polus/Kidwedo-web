@@ -42,7 +42,7 @@ Home
 						<img src="images/fox-home.png" class="img-fluid">
 					</div>
 				</div>
-				<h5><span>Teste Kidwedo jetzt einmalig für 10€     Jetzt testen!</span>@if(Auth::user() == null)<span><a href="{{ route('register') }}"><button type="button" class="kid-btn kid-small-btn  bar-btn">Jetzt testen!</button></a></span>@endif</h5>
+				<h5><span>Teste Kidwedo jetzt einmalig für 10€     Jetzt testen!</span>@if(Auth::user() == null)<span><button type="button" class="kid-btn kid-small-btn  bar-btn">Jetzt testen!</button></span>@endif</h5>
 
 			</section>
 				<!--about-contents-->
@@ -57,7 +57,7 @@ Home
 							<h2>Eine Plattform.
 							<br>Tausende Erlebnisse.</h2>
 							<p>Du mochtest mit wenig Zeitaufwand und fur moglichst kleines Geld 
-                           	dein Kind beschaftigen, es fordern und einzigartige 
+                           	dein Kind beschaftigen,fordern und einzigartige 
                            	Kindheitserinnerungen schaffen?</p>
                            	<p>Dann bist du bei Kidwedo genau richtig!</p>
                            </div>
@@ -66,6 +66,33 @@ Home
 				</div>
 			</section>
 			<!--about-contents end-->
+			<!--list-slider-contents-->
+			<section class="container-fluid discover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<h4>ENTEDECKE UNSERE HIGHLIGHTS IM APRIL</h4>
+							
+								<div class="row">
+									<div class="col-lg-3 col-sm-6">
+										<img src="images/discover-1.jpg" class="img-fluid">
+									</div>
+									<div class="col-lg-3 col-sm-6">
+										<img src="images/discover-2.jpg" class="img-fluid">
+									</div>
+									<div class="col-lg-3 col-sm-6">
+										<img src="images/discover-3.jpg" class="img-fluid">
+									</div>
+									<div class="col-lg-3 col-sm-6">
+										<img src="images/discover-4.jpg" class="img-fluid">
+									</div>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--list-slider-contents end-->
 			<!--mobile-app-contents-->
 			<section class="container-fluid mobile-app">
 				
@@ -79,19 +106,19 @@ Home
 						<div class="col-lg-4 app-discription">
 							<div class="row">
 								<div class="col-lg-12 text-center">
-									<h5>WAHLE</h5>
+									<h5>1 WAHLE</h5>
 									<p>Suche Aktivitaten, Kurse und 
                                        Erlebnisse each Alter, 
                                      Standort und Interesse.</p>
 								</div>
 								<div class="col-lg-12 text-center">
-									<h5>BUCHE</h5>
+									<h5>2 BUCHE</h5>
 									<p>Finde Zeiten und Orte die am 
 									   besten pasen und buche 
 									            sofort.</p>
 								</div>
 								<div class="col-lg-12 text-center">
-									<h5>ERLEBE</h5>
+									<h5>3 ERLEBE</h5>
 									<p>Erhalte deine Bestatigung 
                                      und los gehts!</p>
 								</div>
@@ -174,32 +201,12 @@ Home
 				</div>
 			</section>
 			<!--thumbs-contents end-->
-			<!--partner-contents-->
-			<section class="container-fluid partners">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<h4 class="text-center"> Wahle aus gewerblichen und privaten Anbietern aus</h4>
-							<div class="slider client-slide">
-							    <div class="slide"><img src="images/partner-1.jpg"></div>
-								<div class="slide"><img src="images/partner-2.jpg"></div>
-								<div class="slide"><img src="images/partner-3.jpg"></div>
-								<div class="slide"><img src="images/partner-4.jpg"></div>
-								<div class="slide"><img src="images/partner-5.jpg"></div>
-								<div class="slide"><img src="images/partner-6.jpg"></div>
-								<div class="slide"><img src="images/partner-7.jpg"></div>
-								<div class="slide"><img src="images/partner-8.jpg"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--partner-contents end-->
+			
 			<!--list-slider-contents-->
 			<section class="container-fluid inspire-slider">
 					<div class="row">
 						<div class="col-lg-12">
-							<h4 class="text-center">LASS DICH VON ANDEREN ELTERN INSPIRIEREN</h4>
+							<h4 class="text-center">LASS DICH INSPIRIEREN</h4>
 							<div class="bxslider">
 							  <div class="slider-list">
 							  		<img src="images/slider-1.jpg" alt="ClientName" title="ClientName1">
@@ -250,38 +257,14 @@ Home
 					</div>
 			</section>
 			<!--list-slider-contents end-->
-			<!--list-slider-contents-->
-			<section class="container-fluid discover">
-					<div class="row">
-						<div class="col-lg-12">
-							<h4>ENTDECKE UNSERE Highlights im MARZ</h4>
-							<div class="discover-img-outer">
-								<div class="row">
-									<div class="col-lg-6 col-sm-6">
-										<img src="images/discover-1.jpg" class="img-fluid">
-									</div>
-									<div class="col-lg-6 col-sm-6">
-										<img src="images/discover-2.jpg" class="img-fluid">
-									</div>
-									<div class="col-lg-6 col-sm-6">
-										<img src="images/discover-3.jpg" class="img-fluid">
-									</div>
-									<div class="col-lg-6 col-sm-6">
-										<img src="images/discover-4.jpg" class="img-fluid">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</section>
-			<!--list-slider-contents end-->
+			
 			<!--have-question-contents-->
 			<section class="container-fluid have-question">
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<h4>DU HAST FRAGEN?</h4>
-							<p> Schau dir unser Hilfe Center an oder sende uns eine E-Mail. 
-                             Wir sind hier, urn dir die bestmogliche Kidwedo-Erfahrung zu bieten!</p>
+							<p> Schau bei unserem Support vorbei oder sende uns eine E-Mail.
+							Wir sind hier, um dir die bestmögliche Kidwedo-Erfahrung zu bieten</p>
 						</div>
 					</div>
 			</section>

@@ -1,7 +1,7 @@
 @extends('layouts.partner')
 
 @section('title')
-Anbieter Anmeldung
+ANBIETER  REGISTRIERUNG
 @endsection
 @section('content')
 <!--register-contents-->
@@ -10,7 +10,7 @@ Anbieter Anmeldung
 		<div class="register-outer">
 			<div class="row">
 				<div class="col-lg-12 text-center mb-20">
-					<h2>Anbieter Anmeldung</h2>
+					<h2>ANBIETER  REGISTRIERUNG</h2>
 				</div>
 				<div class="col-lg-12">
 						<div class="login-subouter">
@@ -20,7 +20,7 @@ Anbieter Anmeldung
                                         @csrf
                                         <input type="hidden" value="2" name="type">
                                         <div class="form-group">
-                                            <input type="text" class="custom-input" placeholder="Vorrname" name="name" value="{{ old('name') }}" required autofocus>
+                                            <input type="text" class="custom-input" placeholder="Vorname" name="name" value="{{ old('name') }}" required autofocus>
                                             @if ($errors->has('name'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('name') }}</strong>
@@ -47,7 +47,7 @@ Anbieter Anmeldung
                                             <textarea id="address" type="text" class="form-control" name="address" style="resize: none;" rows="5" placeholder="Adresse">{{ old('address') }}</textarea>
                                         </div>
                                         <div class="form-group">
-                                            <textarea id="about" type="text" class="form-control" name="about" style="resize: none;" rows="5" placeholder="Über mein Angebot" required>{{ old('about') }}</textarea>
+                                            <textarea id="about" type="text" class="form-control" name="about" style="resize: none;" rows="5" placeholder="Kurzbeschreibung des Angebotes" required>{{ old('about') }}</textarea>
                                             @if ($errors->has('about'))
                                                 <span class="invalid" role="alert">
                                                     <strong>{{ $errors->first('about') }}</strong>
@@ -58,7 +58,7 @@ Anbieter Anmeldung
                                             <input id="website" type="text" class="custom-input" name="website" value="{{ old('website') }}" placeholder="Webseite">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="custom-input" placeholder="Telefonnumber" name="phone" value="{{ old('phone') }}" required>
+                                            <input type="text" class="custom-input" placeholder="Telefonnummer" name="phone" value="{{ old('phone') }}" required>
                                             @if ($errors->has('phone'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('phone') }}</strong>
@@ -74,16 +74,15 @@ Anbieter Anmeldung
                                             @endif
                                         </div>
 								        <div class="form-group">
-									        <button type="submit" class="kid-btn w-100">ANMELDEN</button>
+									        <button type="submit" class="kid-btn w-100">REGISTRIEREN</button>
                                         </div>
                                     </form>
 								    <div class="form-group register-dis">
-									    <p>Durch die Anmeldung bei kidwedo stimmen sie
-										    unseren <a href="">Nutzungsbedingungen</a> und <a href="">Datenschutzbestimmungen</a> zu
+									    <p>Durch die Registrierung bei Kidwedo, stimmst du unseren <a href="">Nutzungsbedingungen</a> und <a href="">Datenschutzbestimmungen</a> zu
 									    </p>
 								    </div>
 								    <div class="form-group text-center">
-									    <p>Du hast bereits ein konto?</p>
+									    <p>Du hast bereits ein Konto?</p>
 									    <a href="{{ route('partnerlogin') }}"><button type="button" class="kid-btn login--btn w-100">LOGIN</button></a>
 								    </div>
 							    </div>

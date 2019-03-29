@@ -59,13 +59,13 @@
 					@endif
 				  @if(auth()->user() != null)
 					<li class="nav-item menus">
-					    <a class="nav-link" href="{{ route('partnerhome') }}">MEINE ANGEBOTE</a><!-- My Activities -->
+					    <a class="nav-link" href="{{ route('partnerhome') }}">MEINE AKTIVITÄTNEN </a><!-- My Activities -->
 					</li>
 					<li class="nav-item menus">
-					    <a class="nav-link" href="{{ route('partner.booked') }}">GEBUCHT</a><!-- Booked Activities -->
+					    <a class="nav-link" href="{{ route('partner.booked') }}">GEBUCHTE AKTIVITÄTEN</a><!-- Booked Activities -->
 					</li>
 							<li class="nav-item Highlight-menu dropdown my-account">
-				     	 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>MEIN PROFIL<!-- My Profile --></a>
+				     	 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>DEIN KONTO<!-- My Profile --></a>
 				     	  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          <a class="dropdown-item" href="{{ route('partner_account_settings') }}">Kontoeinstellugen</a><!-- Account Settings -->
 										<a class="dropdown-item" href="{{ route('partner_profile') }}">Mein profil</a><!-- Profile -->
@@ -124,7 +124,7 @@
 							<ul class="footer-links mb-20">
 								<li><a href="">Support</a></li>
 								<li><a href="{{ route('contact_us') }}">Kontakt</a></li>
-								<li><a href="">Impressum</a></li>
+								<li><a href="{{ route('imprint') }}">Impressum</a></li>
 								<li><a href="{{ route('privacy_policy') }}">Datenschutz/AGB</a></li>
 								
 							</ul>

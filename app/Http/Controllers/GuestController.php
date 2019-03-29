@@ -78,6 +78,11 @@ class GuestController extends Controller
         $data['template'] = $this->getTemplate();
         return view('contact_us',$data);
     }
+    public function loadImprint()
+    {
+        $data['template'] = $this->getTemplate();
+        return view('imprint',$data);
+    }
     public function getTemplate()
     {
         if(Auth::user() != null)

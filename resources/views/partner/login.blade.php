@@ -18,7 +18,7 @@ Anbieter Login
 		<div class="login-outer">
 			<div class="row">
 				<div class="col-lg-12 text-center mb-20">
-					<h2>{{ __('Anbieter Login') }}</h2>
+					<h2>{{ __('ANBIETER LOGIN') }}</h2>
 				</div>
 				<div class="col-lg-12">
 					<div class="login-subouter">
@@ -45,11 +45,11 @@ Anbieter Login
 								    <div class="form-group form-check">
 									    <input class="form-check-input" type="checkbox" name="remember" id="defaultCheck1" {{ old('remember') ? 'checked' : '' }}>
 									    <label class="form-check-label" for="defaultCheck1">
-									    {{ __('Erinnere dich an mich') }}
+									    {{ __('Angemeldet bleiben') }}
 									    </label>
 								    </div>
 								    <div class="form-group">
-									    <button type="submit" class="kid-btn w-100">{{ __('Anbieter Login') }}</button>
+									    <button type="submit" class="kid-btn w-100">{{ __('LOGIN') }}</button>
 								    </div>
 								    <div class="form-group forgot-password">
 									    <a href="{{ route('password.request') }}">Passwort vergessen ?</a>

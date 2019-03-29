@@ -1710,6 +1710,11 @@ button:focus
  	margin-bottom: 15px;
  	color: #ff7387;
  }
+ .team-caption a:hover{
+	 color: #e0b1db !important;
+	 text-decoration: none;
+	 cursor: pointer;
+ }
  .team-caption h6
  {
  	font-weight: 600;
@@ -1900,6 +1905,7 @@ button:focus
  {
  	background: #dcaad7;
  }
+ 
  .bg-color-3
  {
  	background: #f5beb9;
@@ -1907,6 +1913,10 @@ button:focus
  .bg-color-4
  {
  	background: #f992a2;
+ }
+ .bd-color-2
+ {
+ 	border-color: #dcaad7;
  }
  .color-1
  {
@@ -2129,6 +2139,31 @@ button:focus
   background: url(images/controls.png) no-repeat -43px -32px;
 }
 /* End bx-wrapper Styling */
+
+/*impressum*/
+.im-address
+{
+	font-weight: 600;
+}
+.impressum h4
+{
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+.impressum-details h5
+{
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.impressum-details p
+{
+	
+	margin-bottom: 5px;
+}
+/*impressum*/
+
 
 .logosImgs {
   display: -webkit-flex;

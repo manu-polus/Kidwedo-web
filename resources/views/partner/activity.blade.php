@@ -14,8 +14,8 @@ Add Activity
 			<div class="row p-15">
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label class="bold-600">Bezeichung</label>
-						<input type="text" class="custom-input" placeholder="Bezeichung" name="event_name" value="{{ old('event_name') }}">
+						<label class="bold-600">Bezeichnung</label>
+						<input type="text" class="custom-input" placeholder="Bezeichnung" name="event_name" value="{{ old('event_name') }}">
 						@if ($errors->has('event_name'))
 						<span class="invalid" role="alert">
 							<strong>{{ $errors->first('event_name') }}</strong>
@@ -25,7 +25,7 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label  class="d-b bold-600">BILD/PHOTO</label>
+						<label  class="d-b bold-600">Bild</label>
 						<input type="file" placeholder="Activity image" name="event_pic" id="event_pic" value="{{ old('event_pic') }}" style="display:none;">
 						<img id="img_display" src="#" alt="your image" style="width: 50px; height: auto" />
 						<button type="button" id="add_img_btn" class="kid-btn kid-small-btn w-100">Bild hochladen</button>
@@ -39,10 +39,10 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label class="d-b bold-600">Begleitung Erforderlich</label>
+						<label class="d-b bold-600">Begleitung erforderlich</label>
 						<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="caregiver" id="caregiver1" value="Y" {{ old('caregiver') == 'Y' ? 'checked' : '' }}>
-						<label class="form-check-label" for="inlineRadio1">Jaa</label>
+						<label class="form-check-label" for="inlineRadio1">Ja</label>
 						</div>
 						<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="caregiver" id="caregiver2" value="N" {{ old('caregiver') == 'N' ? 'checked' : '' }}>
@@ -57,9 +57,9 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label  class="d-b bold-600">Altersgrupe</label>
+						<label  class="d-b bold-600">Altersgruppe</label>
 						<select class="custom-select custom-select-box" name="age">
-							<option selected disabled>Age Group</option>
+							<option selected disabled>Altersgruppe</option>
 							@foreach($ages as $age)
 								<option {{ (old('age') == $age->id) ? 'selected' : '' }} value = "{{ $age->id }}">{{ $age->description }}</option>
 							@endforeach
@@ -84,8 +84,8 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label class="bold-600">zusätzliche Details</label>
-						<textarea class="custom-textarea"  placeholder="zusätzliche Details" name="additional_description">{{ old('additional_description') }}</textarea>
+						<label class="bold-600">Zusätzliche Details</label>
+						<textarea class="custom-textarea"  placeholder="Zusätzliche Details" name="additional_description">{{ old('additional_description') }}</textarea>
 						@if ($errors->has('additional_description'))
 										<span class="invalid" role="alert">
 											<strong>{{ $errors->first('additional_description') }}</strong>
@@ -112,7 +112,7 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label class="bold-600">Kosten</label>
+						<label class="bold-600">Kosten pro Teilnehmer </label>
 						<div class="input-icon-outer">
 						<input type="text" class="custom-input" placeholder="Kosten" name="credits" value="{{ old('credits') }}">
 						<i class="fas fa-euro-sign"></i>
@@ -167,7 +167,7 @@ Add Activity
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label class="bold-600">Datum/Zeit</label>
+								<label class="bold-600">Datum</label>
 								<div class="datepicker-outer">
 									<div id="event-dates"></div>
 								</div>
@@ -178,19 +178,19 @@ Add Activity
 						
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label class="bold-600">Datum/Zeit</label>
+								<label class="bold-600">Zeit</label>
 								<div class="nowwrap date-time-sloat">
 									<div class="input-icon-outer">
-										<input type="text" class="custom-input timepicker" placeholder="Time" name="timepicker1" id="from_time">
+										<input type="text" class="custom-input timepicker" placeholder="Zeit" name="timepicker1" id="from_time">
 										<i class="far fa-clock"></i>
 									</div>
 									<div class="vh-center">TO</div>
 									<div class="input-icon-outer">
-										<input type="text" class="custom-input timepicker" placeholder="Time" name="timepicker2" id="to_time">
+										<input type="text" class="custom-input timepicker" placeholder="Zeit" name="timepicker2" id="to_time">
 										<i class="far fa-clock"></i>
 									</div> 
 									<div class="add-icon-outer v-center">
-										<span id="add_time"><i class="fas fa-plus-circle"></i>Add Time</span>
+										<span id="add_time"><i class="fas fa-plus-circle"></i>Zeit hinzufügen</span>
 									</div>
 								</div>
 							</div>
@@ -204,9 +204,9 @@ Add Activity
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="form-group">
-							<label class="bold-600">Standort hinzufügen</label>
+							<label class="bold-600">Standort</label>
 							<div class="input-icon-outer">
-								<input type="text" class="custom-input" placeholder="Standort hinzufügen" name="place" value="{{ old('place') }}">
+								<input type="text" class="custom-input" placeholder="Standort" name="place" value="{{ old('place') }}">
 								@if ($errors->has('place'))
 									<span class="invalid" role="alert">
 										<strong>{{ $errors->first('place') }}</strong>
@@ -222,7 +222,7 @@ Add Activity
 						</div>
 					</div>
 					<div class="col-lg-12 text-center">
-						<button type="submit" class="kid-btn kid-small-btn" id="add-activity-submit">Angebot Erstellen</button>
+						<button type="submit" class="kid-btn kid-small-btn" id="add-activity-submit">Angebot erstellen</button>
 					</div>
 				</div>
 			</div>

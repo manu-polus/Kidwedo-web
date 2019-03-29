@@ -133,7 +133,7 @@
 							<ul class="footer-links mb-20">
 								<li><a href="">Support</a></li>
 								<li><a href="{{ route('contact_us') }}">Kontakt</a></li>
-								<li><a href="">Impressum</a></li>
+								<li><a href="{{ route('imprint') }}">Impressum</a></li>
 								<li><a href="{{ route('privacy_policy') }}">Datenschutz/AGB</a></li>
 								
 							</ul>

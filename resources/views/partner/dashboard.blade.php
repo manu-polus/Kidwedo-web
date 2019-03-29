@@ -105,7 +105,7 @@ Activities
 				<div class="row">
                 <div class="col-lg-12">
             <div class="filter-btn-outer text-right w-100">
-							<a href="{{ route('partneractivity') }}"><button type="button" class="filter-btn f-active-default w-auto">Angebot erstellen<!-- Add Activity --></button></a>
+							<a href="{{ route('partneractivity') }}"><button type="button" class="filter-btn f-active-default w-auto">ANGEBOT ERSTELLEN<!-- Add Activity --></button></a>
 			</div>
             </div>
 					<div class="col-lg-12 resulting-section"><!--listing-result-->
