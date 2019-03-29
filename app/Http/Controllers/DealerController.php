@@ -512,7 +512,7 @@ class DealerController extends Controller
                     "updated_at" => \Carbon\Carbon::now()
                 ]);
         }
-        
+        return view('partner.booked-activities',$data);
     }
 
     public function str_lreplace($search, $replace, $subject)

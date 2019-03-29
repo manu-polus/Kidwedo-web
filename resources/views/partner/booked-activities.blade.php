@@ -174,6 +174,15 @@ Activities
 <!--activities end-->
 
 <script>
+function cancelActivity(btn){
+    if(confirm("Die Gutschriften dieser Aktivität werden abgezogen und dem Kunden zurückerstattet. Willst du  fortfahren?")){
+			$(location).attr('href', btn.data('del'));
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 $( "#slider" ).slider({
 			range: true,
 			values: [ 17, 67 ]

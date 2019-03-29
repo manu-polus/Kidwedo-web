@@ -102,7 +102,7 @@
 								<li><a href="{{ route('about') }}">Über Uns</a></li>
 								<li><a href="{{ route('our_team') }}">Team</a></li>
 								<li><a href="{{ route('career') }}">Karriere</a></li>
-								<li><a href="">Blog</a></li>
+								<li><a href="http://18.195.222.120/kidwedo/">Blog</a></li>
 								<li><a href="">Folge uns auf</a></li>
 							</ul>
 							
@@ -122,7 +122,7 @@
 						<div class="col-lg-4 col-sm-6 contact">
 							<h4>SERVICES</h4>
 							<ul class="footer-links mb-20">
-								<li><a href="">Support</a></li>
+								<li><a href="http://18.195.222.120/kidwedo/support/">Support</a></li>
 								<li><a href="{{ route('contact_us') }}">Kontakt</a></li>
 								<li><a href="{{ route('imprint') }}">Impressum</a></li>
 								<li><a href="{{ route('privacy_policy') }}">Datenschutz/AGB</a></li>

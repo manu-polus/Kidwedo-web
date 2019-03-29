@@ -134,10 +134,18 @@ class UserController extends Controller
         $booking = DB::table('user_purchase')
                     ->where('user_id', '=', Auth::user()->id)
                     ->where('eventdate_plan_id', '=', $id)
+                    ->orderBy('id', 'desc')
                     ->first();
+        $data['user_booked'] = false;
+        $data['book_url'] = route('activity.booking',['id' => $event_schedule->id ]);
         if ($booking != null) {
-           $data['user_booked'] = true;
-           $data['ticket_url'] = route('activity.print-ticket',['id' => Crypt::encrypt($booking->id)]);
+            if($booking->purchase_status == 'Active'){
+                $data['user_booked'] = true;
+                $data['ticket_url'] = route('activity.print-ticket',['id' => Crypt::encrypt($booking->id)]);
+            }
+            else{
+
+            }
 
         }
         else{

@@ -27,7 +27,11 @@
 		@php
 				$cancel_url = route('activity.cancel',['id' => $event->purchase_id ]);
 			@endphp
-			<button type="button" class="kid-btn small-btn" onclick="location.href='{{$cancel_url}}'">Stornieren</button>&nbsp;		</div>
+			@if($event->purchase_status == "Active")
+			<button type="button" class="kid-btn small-btn" data-del="{{$cancel_url}}" onclick="cancelActivity($(this))" >Stornieren</button>&nbsp;		</div>
+			@else
+				<label for="" style="color:#ff97a6">Abgebrochen</label>
+			@endif
 	</div>
 </div>
 @empty
