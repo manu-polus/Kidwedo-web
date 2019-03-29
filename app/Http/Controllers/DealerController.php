@@ -476,31 +476,38 @@ class DealerController extends Controller
         //dd($data['credits']);
         return view('partner.credits',$data);
     }
-    public function cancelActivity($id)
+    public function cancelActivity($purchase_id)
     {
-        //dd($id);
-        $user_id = DB::table('event_dates as ed')
-                        ->join('events as e', 'ed.event_id', '=', 'e.id')
-                        ->where('ed.id', '=', $id)
-                        ->pluck('e.dealer_id')
-                        ->first();
-                        dd($user_id);
-        if($user_id !== null){
-            $cancel = DB::table('purchases')
+        
+        $booking_data = DB::table('user_purchase')
+                            ->where('id', '=', $purchase_id)
+                            ->first();
+        if($booking_data !== null){
+            $cancel_user = DB::table('user_purchase')
                 ->insertGetId([
-                    'user_id' => $user_id,
-                    'event_plan_id' => $id,
+                    'user_id' => $booking_data->user_id,
+                    'eventdate_plan_id' => $booking_data->eventdate_plan_id,
                     'purchase_type_code' => 2,
                     'purchase_status'=> 'Refund',
+                    'credits' => $booking_data->credits,
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now()
                 ]);
-            $redund = DB::table('purchases')
+            $dealer_id = DB::table('event_dates as ed')
+                        ->join('events as e', 'ed.event_id', '=', 'e.id')
+                        ->where('ed.id', '=', $booking_data->eventdate_plan_id)
+                        ->pluck('e.dealer_id')
+                        ->first();
+                $credit_euro = DB::table('credit_euro_exchange_rate')->select('credit_point', 'credit_euro')->first();
+                $euro_base_1 = (int)$credit_euro->credit_euro/(int)$credit_euro->credit_point;
+            $cancel_dealer = DB::table('dealer_purchase')
                 ->insertGetId([
-                    'user_id' => $user_id,
-                    'event_plan_id' => $id,
-                    'purchase_type_code' => 2,
-                    'purchase_status'=> 'Refund',
+                    'dealer_id' => $dealer_id,
+                    'user_id' => $booking_data->user_id,
+                    'eventdate_id' => $booking_data->eventdate_plan_id,
+                    'purchase_status'=> 'Cancel',
+                    'credits' => $booking_data->credits,
+                    'credits_in_euro' => $euro_base_1*$booking_data->credits,
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now()
                 ]);

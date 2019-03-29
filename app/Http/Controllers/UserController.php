@@ -131,9 +131,9 @@ class UserController extends Controller
                     ->select('u.id AS user_id','d.id AS deader_id','ed.id AS event_id','e.id AS event','event_name','e.pic_filename', 'p.description AS age','category_id','d.description AS dealer_description','e.description AS event_description','additional_description','city','credit','event_status','cancellation_policy','is_caregiver_needed','event_duration','e.location_longitude AS event_longitude','e.location_latitude AS event_latitude','d.location_longitude AS dealer_longitude','d.location_latitude AS dealer_latitude','pic_filename AS activity_pic','logo_pic_filename AS dealer_logo','main_pic_filename AS dealer_pic','d.user_id AS user_id','business_name','arrive_before','zipcode','website','editors_tip','date','from_time','to_time','total_seats','seat_remaining','address')
                     ->where('e.id','=',$event_schedule->event_id)
                     ->first();
-        $booking = DB::table('purchases')
+        $booking = DB::table('user_purchase')
                     ->where('user_id', '=', Auth::user()->id)
-                    ->where('event_plan_id', '=', $id)
+                    ->where('eventdate_plan_id', '=', $id)
                     ->first();
         if ($booking != null) {
            $data['user_booked'] = true;
@@ -486,7 +486,7 @@ class UserController extends Controller
         $query = "CALL GET_KWD_USER_CREDITS(".Auth::user()->id.")";
         //$query = "CALL GET_KWD_USER_CREDITS(3)";
         $data['credits'] = DB::select($query);
-        dd($data['credits']);
+        //dd($data['credits']);
         return view('user.credits',$data);
     }
 

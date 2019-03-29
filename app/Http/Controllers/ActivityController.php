@@ -227,13 +227,26 @@ class ActivityController extends Controller
                     ->pluck('available_credits')
                     ->first();
         if($user_credits < $activity->credit) return Redirect::back()->withErrors("Sie haben kein ausreichendes Guthaben!");
-
-        $purchase_id = DB::table('purchases')
+        $credit_euro = DB::table('credit_euro_exchange_rate')->select('credit_point', 'credit_euro')->first();
+        $euro_base_1 = (int)$credit_euro->credit_euro/(int)$credit_euro->credit_point;
+        $purchase_id = DB::table('user_purchase')
                 ->insertGetId([
                     'user_id' => $user_id,
-                    'event_plan_id' => $activity->event_date_id,
+                    'eventdate_plan_id' => $activity->event_date_id,
                     'purchase_type_code' => 2,
                     'purchase_status'=> 'Active',
+                    'credits' => $activity->credit,
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ]);
+        $purchase_id = DB::table('dealer_purchase')
+                ->insertGetId([
+                    'dealer_id' => $activity->dealer_id,
+                    'user_id' => $user_id,
+                    'eventdate_id' => $activity->event_date_id,
+                    'purchase_status'=> 'Active',
+                    'credits' => $activity->credit,
+                    'credits_in_euro' => $euro_base_1*$activity->credit,
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now()
                 ]);
@@ -290,7 +303,7 @@ class ActivityController extends Controller
             $query = "CALL GET_KWD_DEALER_EVENTS('". $request_json ."')";
             //echo $query;die;
             $data['events'] = DB::select($query);
-            //dd($data['activities']);
+            //dd($data['events']);
         return view('partner.api.activity-booked', $data);
     }
 

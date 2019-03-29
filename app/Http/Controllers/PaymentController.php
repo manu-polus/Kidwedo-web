@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Item;
@@ -157,12 +158,23 @@ class PaymentController extends Controller
             $user->available_credits = $cost; 
             $user->update();
 
-            $purchase = new Purchase();
-            $purchase->user_id = Auth::user()->id;
-            $purchase->event_plan_id = $payinfo->id;
-            $purchase->purchase_type_code = 1;
-            $purchase->purchase_status = "Active";
-            $purchase->save();
+            // $purchase = new Purchase();
+            // $purchase->user_id = Auth::user()->id;
+            // $purchase->event_plan_id = $payinfo->id;
+            // $purchase->purchase_type_code = 1;
+            // $purchase->purchase_status = "Active";
+            // $purchase->save();
+
+            $purchase_id = DB::table('user_purchase')
+                ->insertGetId([
+                    'user_id' => Auth::user()->id,
+                    'event_plan_id' => 1,
+                    'purchase_type_code' => 1,
+                    'purchase_status'=> 'Active',
+                    'credits' => 10,
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ]);
 
             $data['payment'] = $payinfo;
             //return redirect()->route('paymentinfo',['id' => $payinfo->id]);

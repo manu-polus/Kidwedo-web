@@ -25,7 +25,7 @@
 		</div>
 		<div class="col-lg-1 p-0 v-h-center">
 		@php
-				$cancel_url = route('activity.cancel',['id' => $event->event_date_id ]);
+				$cancel_url = route('activity.cancel',['id' => $event->purchase_id ]);
 			@endphp
 			<button type="button" class="kid-btn small-btn" onclick="location.href='{{$cancel_url}}'">Stornieren</button>&nbsp;		</div>
 	</div>

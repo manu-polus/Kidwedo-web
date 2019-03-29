@@ -37,9 +37,9 @@ My Credits
 							  <tbody>
                               @forelse($credits as $credit)
 							    <tr>
-							      <td>{{ $credit->purchase_type_code == 1 ? 'Gutschrift' : 'Abgezogen : Aktivität' }} <a href="{{ route('activity.view',['id' => $credit->event_dates_id]) }}"><u>{{ $credit->event_name }}</u></a></td>
+							      <td>{{ $credit->purchase_type == 1 ? 'Gutschrift' : 'Abgezogen : Aktivität' }} <a href="{{ route('activity.view',['id' => $credit->event_dates_id]) }}"><u>{{ $credit->event_name }}</u></a></td>
 							      <td>{{ date('d-m-Y', strtotime($credit->created_at)) }}</td>
-							      <td><span class="{{ $credit->purchase_type_code == 1 ? 'av-credit' : 'minus-credit' }}"><img src="{{ asset('images/credit-icon.png') }}">{{ $credit->purchase_type_code == 1 ? '+' : '-' }}{{ $credit->amount }}</span></td>
+							      <td><span class="{{ $credit->purchase_type == 1 ? 'av-credit' : 'minus-credit' }}"><img src="{{ asset('images/credit-icon.png') }}">{{ $credit->purchase_type == 1 ? '+' : '-' }}{{ $credit->amount }}</span></td>
 							    </tr>
                                 @empty
                                 <div class="col-lg-12 a-not-found text-center v-h-center">
