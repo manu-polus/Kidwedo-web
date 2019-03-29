@@ -92,7 +92,7 @@ class RegisterController extends Controller
             $insert_data['mobile_number'] = $data['phone'];
             $insert_data['status_id'] = 2;
             $insert_data['plan_id'] = '1';
-            $insert_data['password'] = Hash::make('admin');
+            $insert_data['password'] = Hash::make($data['email']);
 
             $user = User::create( $insert_data );
 

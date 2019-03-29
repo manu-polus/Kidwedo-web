@@ -50,7 +50,7 @@ Home
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5">
-							<img src="images/kids.jpg" class="img-fluid">
+							<img src="images/Landingpage2Pic.jpg" class="img-fluid">
 						</div>
 						<div class="col-lg-7 v-h-center">
 							<div>

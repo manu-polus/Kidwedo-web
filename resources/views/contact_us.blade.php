@@ -30,7 +30,7 @@
 						
 						<div class="col-lg-12">
 							<div class="form-group">
-								<button type="button" class="kid-btn kid-small-btn w-100">ABSCHICKEN</button>
+								<button type="button" class="kid-btn kid-small-btn w-100 bg-color-1 bd-color-1">ABSCHICKEN</button>
 							</div>
 						</div>
 						

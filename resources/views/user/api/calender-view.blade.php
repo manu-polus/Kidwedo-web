@@ -9,7 +9,25 @@
 		</div>
 		<div class="col-lg-5 f-listing-description">
 			<h4><a href="{{ route('activity.view',['id' => $activity->event_date_id ]) }}">{{$activity->event_name}}</a></h4>
-			<img src="{{ asset('images/rating.png') }}" class="img-fluid"><span class="f-av">Bewertungen 4</span>
+			<div class='rated-stars d-inline-block'>
+    									<ul id='star_id'>
+      										<li class='stared {{ $activity->event_rating > 0 ? "selected" : "" }}' title='Poor' data-value='1'>
+        										<i class='fa fa-star fa-fw'></i>
+      										</li>
+      										<li class='stared {{ $activity->event_rating > 1 ? "selected" : "" }}' title='Fair' data-value='2'>
+        										<i class='fa fa-star fa-fw'></i>
+      										</li>
+      										<li class='stared {{ $activity->event_rating > 2 ? "selected" : "" }}' title='Good' data-value='3'>
+        										<i class='fa fa-star fa-fw'></i>
+      										</li>
+      										<li class='stared {{ $activity->event_rating > 3 ? "selected" : "" }}' title='Excellent' data-value='4'>
+        										<i class='fa fa-star fa-fw'></i>
+      										</li>
+      										<li class='stared {{ $activity->event_rating > 4 ? "selected" : "" }}' title='WOW!!!' data-value='5'>
+        										<i class='fa fa-star fa-fw'></i>
+      										</li>
+    									</ul>
+  									</div><span class="f-av">Bewertungen {{ $activity->event_rating }}</span>
 			<div class="f-details w-100">
                 <p>Ort: {{$activity->city}}</p>
 				<p>Alter: {{$activity->age_description}}</p>

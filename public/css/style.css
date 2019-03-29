@@ -349,7 +349,7 @@ button:focus
 }
 .home-banner
 {
-	background: url(../images/banner.jpg);
+	background: url(../images/Landingpage1stPic.jpg);
 	min-height: 600px;
 	background-size: cover;
 	display: flex;
@@ -1481,12 +1481,22 @@ button:focus
  }
  .pro-banner
  {
- 	background: url(../images/pro-banner.jpg);
+ 	
  	min-height: 500px;
- 	background-size: cover;
+ 	
  	display: flex;
  	justify-content: start;
  	align-items: center;
+ }
+ .com-pro
+ {
+	background: url(../images/GewerblicheAnbieter2.jpg);
+	background-size: cover;
+ }
+ .pri-pro
+ {
+	background: url(../images/PrivateAnbieter2.jpg);
+	background-size: cover;
  }
  .pro-banner-text h2
  {
@@ -1510,23 +1520,16 @@ button:focus
  }
  .pro-steps ul li
  {
- 	list-style: none;
+	list-style: decimal;
  }
- .pro-steps ul li::before
- {
- 	content: "\f101";
- 	font-family: "Font Awesome 5 Free";
- 	font-weight: 900;
- 	margin-right: 5px;
- 	color: #fff;
- }
+
  .pro-steps h4
  {
  	font-weight: 600;
  }
  .pro-steps ul
  {
- 	padding: 0;
+	padding-left: 2em;
  }
  .we-spprt-outer
  {
@@ -1562,7 +1565,7 @@ button:focus
  }
  .support-des h5
  {
- 	color: #ff7387;
+ 	color: #dcaad7;
  	font-weight: 600;
  }
  .pro-reg p
@@ -1578,7 +1581,7 @@ button:focus
  .we-support h4
  {
  	margin-bottom: 20px;
- 	color: #424242;
+ 	color: #dcaad7;
  	font-weight: 600;
  }
  .any-questions
@@ -1659,9 +1662,18 @@ button:focus
  }
  .team-banner
  {
- 	background: url(../images/team-banner.jpg);
+ 	background: url(../images/Team.jpg);
  	height: 220px;
- 	background-size: cover;
+	 background-size: cover;
+	 background-position-y: -186px;
+	 position: relative;
+ }
+ .team-banner::before{
+	 position: absolute;
+	 content:"";
+	 background: #00000069;
+	 width: 100%;
+	 height: 100%;
  }
  .team-banner-text
  {
@@ -1872,11 +1884,11 @@ button:focus
  
 .speech-bubble 
 { 
-	position: relative; 
-	background: #b4ddd952; 
-	border-radius: .4em; 
-	padding: 15px;
-	border: solid #b4ddd9;
+	position: relative;
+    background: #ffabb8;
+    border-radius: .4em;
+    padding: 15px;
+    border: solid #ffabb8;
 }
 .speech-bubble:after 
 { 
@@ -1887,7 +1899,7 @@ button:focus
  	width: 0; 
  	height: 0; 
  	border: 100px solid transparent; 
- 	border-top-color: #b4ddd9; 
+ 	border-top-color:  #ffabb8; 
  	border-bottom: 0; 
  	border-left: 0; 
  	margin-left: -50px; 
@@ -1913,6 +1925,10 @@ button:focus
  .bg-color-4
  {
  	background: #f992a2;
+ }
+ .bd-color-1
+ {
+	border-color: #b4ddd9;
  }
  .bd-color-2
  {
@@ -2012,7 +2028,7 @@ button:focus
 }
 
 .testimonials h1 {
-  color: #ff97a6;
+  color: #dcaad7;
   text-align: center;
   margin-top: 0rem;
   line-height: 3.6rem;

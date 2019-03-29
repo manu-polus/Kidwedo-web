@@ -9,7 +9,6 @@
 		</div>
 		<div class="col-lg-4 f-listing-description">
 			<h4>{{$event->event_name}}</h4>
-			<img src="{{ asset('images/rating.png') }}" class="img-fluid"><span class="f-av">Bewertungen 4</span>
 			<div class="f-details w-100">
                 <p>Ort: {{$event->city}}</p>
 				<p>Alter: {{$event->age}}</p>
