@@ -53,7 +53,7 @@
 						@endif
 						@if(!(request()->is('partner/registration')))
 							<li class="nav-item Highlight-menu">
-								<a class="nav-link" href="{{ route('partnerregistration') }}">ANMELDEN</a>
+								<a class="nav-link" href="{{ route('partnerregistration') }}">REGISTRIEREN</a>
 							</li>
 						@endif
 					@endif

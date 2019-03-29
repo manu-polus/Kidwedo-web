@@ -49,10 +49,10 @@
 				   <ul class="navbar-nav kid-menu right-menu">
 					 @if(auth()->user() != null)
 				   	<li class="nav-item menus">
-					   <a class="nav-link" href="{{ route('activity') }}">Activities</a><!-- ACTIVITIES -->
+					   <a class="nav-link" href="{{ route('activity') }}">AKTIVITÄTEN</a><!-- ACTIVITIES -->
 					</li>
 						<li class="nav-item menus">
-					    <a class="nav-link" href="{{ route('subscribe') }}">Abonnement</a><!-- SUBSCRIBE -->
+					    <a class="nav-link" href="{{ route('subscribe') }}">ABONNEMENT</a><!-- SUBSCRIBE -->
 					</li> 
 					@endif
 					@if(auth()->user() == null)
@@ -63,7 +63,7 @@
 						@endif
 						@if(!(request()->is('register')))
 							<li class="nav-item Highlight-menu">
-								<a class="nav-link" href="{{ route('register') }}">ANMELDEN</a>
+								<a class="nav-link" href="{{ route('register') }}">REGISTRIEREN</a>
 							</li>
 						@endif
 					@endif

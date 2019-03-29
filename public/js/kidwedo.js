@@ -1,6 +1,6 @@
 function delete_confirm()
 {
-    var confirm_deletion = confirm("Are you sure to delete ?");
+    var confirm_deletion = confirm("Bist du sicher, das du das löschen möchtest ?");
     return confirm_deletion;
 }
 
@@ -45,10 +45,10 @@ $(document).ready(function(){
       var msg = "";
       $('#rating').val(ratingValue);
       if (ratingValue > 1) {
-          msg = "Thanks! You rated this " + ratingValue + " stars.";
+          msg = "Danke für deine Bewertung!";
       }
       else {
-          msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+          msg = "Danke für deine Bewertung!";
       }
       responseMessage(msg);
       

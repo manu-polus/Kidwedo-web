@@ -185,7 +185,7 @@ Activity View
 							@empty 
             				<div class="col-lg-12 a-not-found text-center v-h-center">
 			    				<div>
-				    				<h3>Currently no Reviews</h3>
+				    				<h3>Derzeit keine Bewertungen</h3>
 								</div>
 		    				</div>
             				@endforelse
@@ -200,7 +200,7 @@ Activity View
 						<div class="w-100 ac-providers">
 							<div class="row">
 								<div class="col-lg-2">
-									<h6>PROVIDERS</h6>
+									<h6>Anbieter</h6>
 									<img src="{{ Storage::url($activity->dealer_logo) }}" class="img-fluid">
 								</div>
 								<div class="col-lg-10 ac-pro-des">
@@ -248,7 +248,7 @@ Activity View
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header kidwedo-modal-header">
-			        <h5 class="modal-title" id="ratingModalLabel">RATE THIS ACTIVITY</h5>
+			        <h5 class="modal-title" id="ratingModalLabel">Bewerte dein Erlebnis</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
@@ -322,8 +322,8 @@ Activity View
 				       </div>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Stornieren</button>
-			        <button type="submit" form="post_rating" class="kid-btn kid-small-btn">Einreichen</button>
+			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Löschen</button>
+			        <button type="submit" form="post_rating" class="kid-btn kid-small-btn">Eintragen</button>
 			      </div>
                 </div>
 			  </div>

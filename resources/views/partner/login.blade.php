@@ -27,7 +27,7 @@ Anbieter Login
 								<form method="POST" action="{{ route('login') }}">
                                     @csrf
 								    <div class="form-group">
-									    <input type="text" name="email" class="login-input" placeholder="{{ __('E-Mail') }}" value="{{ old('email') }}" required autofocus>
+									    <input type="text" name="email" class="custom-input" placeholder="{{ __('E-Mail') }}" value="{{ old('email') }}" required autofocus>
                                         @if ($errors->has('email'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('email') }}</strong>
@@ -35,7 +35,7 @@ Anbieter Login
                                         @endif
                                     </div>
 								    <div class="form-group">
-									    <input type="password" class="login-input" placeholder="{{ __('Passwort') }}" name="password" required>
+									    <input type="password" class="custom-input" placeholder="{{ __('Passwort') }}" name="password" required>
                                         @if ($errors->has('password'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('password') }}</strong>
