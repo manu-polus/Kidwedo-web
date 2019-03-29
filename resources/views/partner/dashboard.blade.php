@@ -121,7 +121,7 @@ Activities
 
 <script>
 function deleteActivity(btn){
-    if(confirm("Are you sure you want to delete this?")){
+    if(confirm("Möchtest du das wirklich löschen?")){
 			$(location).attr('href', btn.data('del'));
         return true;
     }

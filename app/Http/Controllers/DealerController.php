@@ -12,8 +12,11 @@ use App\PreferredAges;
 use App\Message;
 use App\Event;
 use App\EventDates;
+use App\EventReview;
+use DateTime;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\ActivityController;
 
 
 class DealerController extends Controller
@@ -23,6 +26,111 @@ class DealerController extends Controller
         $data['categories'] = Category::get();
         $data['ages'] = PreferredAges::get();
         return view('partner.activity',$data);
+    }
+    public function viewActivity($id)
+    {
+        $activity = new ActivityController();
+        $event_schedule = DB::table('event_dates')
+                            ->where('id', '=', $id)
+                            ->first();
+                            
+        $data['activity'] = DB::table('events AS e')
+                    ->join('dealers AS d','e.dealer_id','=','d.id')
+                    ->join('event_dates AS ed','e.id','=','ed.event_id')
+                    ->join('users AS u','d.user_id','=','u.id')
+                    ->join('preferred_ages AS p','e.preferred_age_id','=','p.id')
+                    ->select('u.id AS user_id','d.id AS deader_id','ed.id AS event_id','e.id AS event','event_name','e.pic_filename', 'p.description AS age','category_id','d.description AS dealer_description','e.description AS event_description','additional_description','city','credit','event_status','cancellation_policy','is_caregiver_needed','event_duration','e.location_longitude AS event_longitude','e.location_latitude AS event_latitude','d.location_longitude AS dealer_longitude','d.location_latitude AS dealer_latitude','pic_filename AS activity_pic','logo_pic_filename AS dealer_logo','main_pic_filename AS dealer_pic','d.user_id AS user_id','business_name','arrive_before','zipcode','website','editors_tip','date','from_time','to_time','total_seats','seat_remaining','address')
+                    ->where('e.id','=',$event_schedule->event_id)
+                    ->where('u.id','=',Auth::user()->id)
+                    ->first();
+              //dd($data['activity']);     
+        /*$booking = DB::table('purchases')
+                    ->where('user_id', '=', Auth::user()->id)
+                    ->where('event_plan_id', '=', $id)
+                    ->first();
+        if ($booking != null) {
+           $data['user_booked'] = true;
+           $data['ticket_url'] = route('activity.print-ticket',['id' => Crypt::encrypt($booking->id)]);
+
+        }
+        else{
+            $data['user_booked'] = false;
+            $data['book_url'] = route('activity.booking',['id' => $event_schedule->id ]);
+        }*/
+        $data['activity_image'] = Storage::url($data['activity']->pic_filename);
+        $data['schedule'] = $event_schedule;
+        $newDate = DateTime::createFromFormat('Y-m-d', $event_schedule->date);
+        $data['schedule']->date_name = $newDate->format('l'); 
+
+        //dd($data);
+        if($data['activity']->dealer_pic != null)
+        {
+            $data['dealer_picture'] = Storage::url($data['activity']->dealer_pic);
+        }
+        if($data['activity']->dealer_logo != null)
+        {
+            $data['dealer_logo'] = Storage::url($data['activity']->dealer_logo);
+        }
+        if($data['activity']->activity_pic != null)
+        {
+            $data['activity_picture'] = Storage::url($data['activity']->activity_pic);
+        }
+
+        //echo $data['dealer_logo'];
+        //dd($data);
+
+        $rating = EventReview::where('user_id','=',Auth::user()->id)
+                                ->where('event_id','=',$data['activity']->event)
+                                ->get();
+        if(count($rating) == 0)
+        {
+            $data['is_rated'] = false;
+        }
+        else
+        {
+            $data['is_rated'] = true;
+        }
+
+        $ratings = DB::table('event_ratings AS er')->join('users AS u','er.user_id','=','u.id')
+                    ->select('u.id AS user_id','u.name AS name','er.rating AS rating','er.comment AS comment','er.created_at AS created_at')
+                    ->where('er.event_id','=',$data['activity']->event)
+                    ->get();
+        $data['rating_count'] = count($ratings);
+        $data['reviews'] = $ratings;
+        $data['rate_avg'] = DB::table('event_ratings')->where('event_id','=',$data['activity']->event)->avg('rating');
+        $data['rate_avg'] = round($data['rate_avg']);
+        $data['next_five_activities'] = $activity->getNextFiveActivitiesBasedEvent($data['activity']->event_id);
+
+        $my_rating = DB::table('event_ratings')->where('event_id','=',$data['activity']->event)->where('user_id','=',Auth::user()->id)->first();
+        
+        if($my_rating == null)
+        {
+            $data['my_rating'] = 0;
+        }
+        else
+        {
+            $data['my_rating'] = $my_rating->rating;
+        }
+        $rating_avg = DB::table('dealers AS d')
+                    ->join('events AS e','d.id','=','e.dealer_id')
+                    ->join('event_ratings AS er','e.id','=','er.event_id')
+                    ->where('d.id','=',$data['activity']->deader_id)
+                    ->get();
+        
+        if($rating_avg != null)
+        {
+            $data['number_of_events'] = count($rating_avg->unique('event_id'));
+            $data['provider_rating'] = $rating_avg->avg('rating');
+            $data['number_of_ratings'] = count($rating_avg);
+            $data['provider_rating'] = round($data['provider_rating']);
+        }
+        else
+        {
+            $data['number_of_events'] = 0;
+            $data['provider_rating'] = 0;
+            $data['number_of_ratings'] = 0;
+        }
+        return view('partner.activityview',$data);
     }
     public function postActivity(Request $request)
     {

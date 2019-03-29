@@ -36,14 +36,14 @@ My Credits
 							  <tbody>
                               @forelse($credits as $credit)
 							    <tr>
-							      <td>Aktivität: {{ $credit->event_name }} | Kunde: {{ $credit->name }}</td>
+							      <td>Aktivität: <a href="{{ route('partner_activity.view',['id' => $credit->event_date_id]) }}"><u>{{ $credit->event_name }}</u></a> | Kunde: {{ $credit->name }}</td>
 							      <td>{{ date('d-m-Y', strtotime($credit->created_at)) }}</td>
 							      <td class="text-right">{{ $credit->credit }} </td><td class="text-center">|</td><td> {{ $credit->credits_in_euro }}</td>
 							    </tr>
                                 @empty
                                 <div class="col-lg-12 a-not-found text-center v-h-center">
 			                        <div>
-				                        <h3>No data found</h3>
+				                        <h3>Keine Daten gefunden</h3>
 				                    </div>
 		                        </div>
                             @endforelse

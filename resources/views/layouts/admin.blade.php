@@ -92,7 +92,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b style="color: red">Admin</b></span>
+      <span class="logo-lg"><b style="color: red">Administrator</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -317,13 +317,13 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{ route('change_password') }}" class="btn btn-default btn-flat">Setting</a>
+                  <a href="{{ route('change_password') }}" class="btn btn-default btn-flat">Rahmen</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ route('logout') }}" class="btn btn-default btn-flat"
                                                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                     Sign out
+                                                     Ausloggen
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -369,7 +369,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="treeview {{ (request()->is('admin/dealer/home') || request()->is('admin/dealer/waiting') || request()->is('admin/dealer/blocked')) ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-handshake-o"></i> <span>Dealers</span>
+            <i class="fa fa-handshake-o"></i> <span>Anbieter</span>
             <span class="pull-right-container">
             <span class="label label-primary pull-right">{{ $totalcount!=0 ? $totalcount : '' }}</span>
               <i class="fa fa-angle-left pull-right"></i>
@@ -393,7 +393,7 @@
         <li class="treeview {{ request()->is('admin/users/list') ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i>
-            <span>Manage Users</span>
+            <span>Kunden verwalten</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
@@ -413,11 +413,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ request()->is('admin/events/pending') ? 'active' : '' }}"><a href="{{ route('pending_events_list') }}"><i class="fa fa-star-o"></i> Pending Events
+            <li class="{{ request()->is('admin/events/pending') ? 'active' : '' }}"><a href="{{ route('pending_events_list') }}"><i class="fa fa-star-o"></i> Anstehende Erlebnisse
             <span class="pull-right-container">
               <span class="label label-primary pull-right">{{ $pending_events_count!=0 ? $pending_events_count : '' }}</span>
             </span></a></li>
-            <li class="{{ request()->is('admin/events/active') ? 'active' : '' }}"><a href="{{ route('active_events_list') }}"><i class="fa fa-star"></i> Active Events
+            <li class="{{ request()->is('admin/events/active') ? 'active' : '' }}"><a href="{{ route('active_events_list') }}"><i class="fa fa-star"></i> Aktive Erlebnisse
             <span class="pull-right-container">
               <span class="label label-primary pull-right">{{ $active_events_count!=0 ? $active_events_count : '' }}</span>
             </span></a></li>
@@ -426,11 +426,11 @@
         <li class="treeview {{ request()->is('admin/site-settings') ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-cogs"></i>
-            <span>Manage Settings</span>
+            <span>Einstellungen verwalten</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ request()->is('admin/site-settings') ? 'active' : '' }}"><a href="{{ route('admin_credit') }}"><i class="fa fa-cog"></i> Site Settings
+            <li class="{{ request()->is('admin/site-settings') ? 'active' : '' }}"><a href="{{ route('admin_credit') }}"><i class="fa fa-cog"></i> Seiteneinstellungen
            </a></li>
           </ul>
         </li>

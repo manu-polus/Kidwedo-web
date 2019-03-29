@@ -19,7 +19,7 @@
 			@php
 				$cancel_url = route('activity.cancel',['id' => $event->event_date_id ]);
 			@endphp
-			<button type="button" class="kid-btn small-btn" onclick="location.href='{{$cancel_url}}'">Cancel</button>&nbsp;
+			<button type="button" class="kid-btn small-btn" onclick="location.href='{{$cancel_url}}'">Stornieren</button>&nbsp;
 		</div>
 	</div>
 </div>
@@ -28,8 +28,8 @@
 	<div class="row">
 		<div class="col-lg-12 a-not-found text-center v-h-center">
 			<div>
-				<h3>LOOKS LIKE THERE NO ACTIVITY FOUND</h3>
-				<p>Check out a different day or update your filters to join in on the fun!</p>
+				<h3>Es wurde keine Aktivität gefunden</h3>
+				<p>Sieh dir einen anderen Tag an, oder aktualisiere die Filter, um mehr zu erleben!</p>
 			</div>
 		</div>
 	</div>

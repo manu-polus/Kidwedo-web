@@ -29,7 +29,7 @@ class UserController extends Controller
             $user->password = Hash::make($request->input('new_password'));
             if($user->update())
             {
-                \Session::put('success', 'New password set. Please login with your new password');
+                \Session::put('success', 'Neues Passwort registriert. Bitte melde dich mit deinem neuen Passwort an');
                 Auth::logout();
                 return redirect()->route('login');
             }
@@ -72,14 +72,14 @@ class UserController extends Controller
             $user->password = Hash::make($request->input('new_password'));
             if($user->update())
             {
-                \Session::put('success', 'New password set. Please login with your new password');
+                \Session::put('success', 'Neues Passwort registriert. Bitte melde dich mit deinem neuen Passwort an');
                 Auth::logout();
                 return redirect()->route('partnerlogin');
             }
         }
         else
         {
-            \Session::put('error', 'Incorrect Password');
+            \Session::put('error', 'Falsches Passwort');
             return redirect()->route('partner_account_settings');
         }
     }
@@ -186,7 +186,7 @@ class UserController extends Controller
         $data['reviews'] = $ratings;
         $data['rate_avg'] = DB::table('event_ratings')->where('event_id','=',$data['activity']->event)->avg('rating');
         $data['rate_avg'] = round($data['rate_avg']);
-        $data['next_five_activities'] = $activity->getNextFiveActivitiesBasedEvent($data['activity']->event_id);
+        $data['next_five_activities'] = $activity->getNextFiveActivitiesBasedEvent($data['activity']->event);
 
         $my_rating = DB::table('event_ratings')->where('event_id','=',$data['activity']->event)->where('user_id','=',Auth::user()->id)->first();
         
@@ -486,6 +486,7 @@ class UserController extends Controller
         $query = "CALL GET_KWD_USER_CREDITS(".Auth::user()->id.")";
         //$query = "CALL GET_KWD_USER_CREDITS(3)";
         $data['credits'] = DB::select($query);
+        dd($data['credits']);
         return view('user.credits',$data);
     }
 

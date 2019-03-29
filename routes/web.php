@@ -168,6 +168,8 @@ Route::middleware('auth')->group(function()
             $data['partner'] = DB::table('dealers')->where('user_id',Auth::user()->id)->first();
             return view('partner.profile',$data);
          })->name('partner_profile');
+
+        Route::get('partner/activity/{id}','DealerController@viewActivity')->name('partner_activity.view');
     
         Route::post('/partner/profile','UserController@postProfilePartner')->name('partner_profile');
 

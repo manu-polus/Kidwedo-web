@@ -3,7 +3,7 @@
 @section('content')
 @php $count = 1; @endphp
 <div class="box-header">
-    <h3 class="box-title">Pending Events</h3>
+    <h3 class="box-title">Anstehende Erlebnisse</h3>
 </div>
 
 <!-- /.box-header -->
@@ -12,9 +12,9 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Event Name</th>
+                  <th>Veranstaltungsname</th>
                   <th>Partner</th>
-                  <th>Options</th>
+                  <th>Optionen</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -34,7 +34,7 @@
                 @empty
                 <tr class="text-center">
 			        <td>
-				        <td colspan="3">LOOKS LIKE NO PENDING EVENTS FOUND</td>
+				        <td colspan="3">Keine anstehenden Erlebnisse gefunden</td>
 				    </td>
 		        </tr>
                 @endforelse
@@ -51,20 +51,20 @@
                             </div>
                             <div class="modal-body">
                                 <p>
-                                    <strong>Event Name :</strong> <span class="vieweventname"></span><br>
+                                    <strong>Veranstaltungsname :</strong> <span class="vieweventname"></span><br>
                                     <strong>Partner :</strong> <span class="viewpartner"></span><br>
-                                    <strong>Credits required :</strong> <span class="viewcredits"></span><br>
-                                    <strong>Duration :</strong> <span class="viewduration"></span><br>
-                                    <strong>Place :</strong> <span class="viewplace"></span><br>
-                                    <strong>Care giver needed ? :</strong> <span class="viewcaregiverrequired"></span><br>
-                                    <strong>Cancellation policy :</strong> <span class="viewcancelpolicy"></span><br>
-                                    <strong>Event created at :</strong> <span class="viewcreatedat"></span><br>
-                                    <strong>Event updated at :</strong> <span class="viewupdatedat"></span><br><br>
-                                    <strong>About event</strong><div class="viewaboutevent"></div>
+                                    <strong>Credits erforderlich :</strong> <span class="viewcredits"></span><br>
+                                    <strong>Dauer :</strong> <span class="viewduration"></span><br>
+                                    <strong>Platz :</strong> <span class="viewplace"></span><br>
+                                    <strong>Betreuer benötigt ? :</strong> <span class="viewcaregiverrequired"></span><br>
+                                    <strong>Stornierungsbedingungen :</strong> <span class="viewcancelpolicy"></span><br>
+                                    <strong>Ereignis erstellt am :</strong> <span class="viewcreatedat"></span><br>
+                                    <strong>Veranstaltung aktualisiert um :</strong> <span class="viewupdatedat"></span><br><br>
+                                    <strong>Über die Veranstaltung</strong><div class="viewaboutevent"></div>
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Schließen</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -78,11 +78,11 @@
                     var care = '';
                     if(viewdata.is_caregiver_needed == 'Y')
                     {
-                        care = 'Yes';
+                        care = 'Ja';
                     }
                     else
                     {
-                        care = 'No';
+                        care = 'Nein';
                     }
                     $('.modal-title').html(viewdata.event_name);
                     $('.vieweventname').html(viewdata.event_name);

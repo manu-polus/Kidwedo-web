@@ -9,26 +9,26 @@ Booking success
 		<div class="row p-15">
 			<div class="col-lg-12 text-center">
 				<i class="fas fa-check-circle verify-icon"></i>
-				<h4>YOUR BOOKING IS SUCCESSFULL</h4>
+				<h4>Deine Buchung war erfolgreich!</h4>
 			</div>
 			<div class="col-lg-12 mb-15">
 				<div class="ticket-outer">
 					<span class="ticket-icon"><i class="fas fa-ticket-alt"></i></span>
 					<div class="row p-15">
 						<div class="col-lg-6 booking-label  bold-600">
-							Booking ID
+						Buchungsnummer
 						</div>
 						<div class="col-lg-6">
 							{{$ticket_details->ticket_id}}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-							Booked Activity
+						Gebuchtes Angebot
 						</div>
 						<div class="col-lg-6">
                         {{$ticket_details->event_name}}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-							Booked Date & Time
+						Darum und Uhrzeit
 						</div>
 						<div class="col-lg-6">
                             {{$ticket_details->date}}, {{$ticket_details->from_time}}
@@ -37,7 +37,7 @@ Booking success
 				</div>
 			</div>
 			<div class="col-lg-12 text-center">
-				<button type="button" class="kid-btn kid-small-btn" onclick='printDiv();'>Print Ticket</button>
+				<button type="button" class="kid-btn kid-small-btn" onclick='printDiv();'>Ticket drucken</button>
 			</div>
 		</div>
 	</div>

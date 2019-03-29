@@ -12,18 +12,18 @@ Settings
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12 profile-outer account-setting">
-									<h5>KONTOEINSTELLUGEN</h5>
-									<h6>Paswort andern</h6>
+									<h5>Kontoeinstellungen</h5>
+									<h6>Passwort ändern</h6>
 									<form method="POST" action="{{ route('passwordreset') }}">
                         			@csrf
-									<div class="prof-form account-form">
+									<div class="prof-form account-form bg-color-3">
 										
 										<div class="form-group row">
 											<div class="col-lg-4 col-sm-6">
-												Bisheriges Paswort
+											Bisheriges Passwort
 											</div>
 											<div class="col-lg-8 col-sm-6">
-												<input type="password" name="password" class="custom-input" placeholder="Bisheriges Paswort" required>
+												<input type="password" name="password" class="custom-input" placeholder="Bisheriges Passwort" required>
 												@if (Session::get('error'))
                           <span class="invalid" role="alert">
                               <strong>{{ Session::get('error') }}</strong>
@@ -34,10 +34,10 @@ Settings
 										</div>
 										<div class="form-group row">
 											<div class="col-lg-4 col-sm-6">
-												Neues Paswort
+											Neues Passwort
 											</div>
 											<div class="col-lg-8 col-sm-6">
-												<input type="password" name="new_password" class="custom-input" placeholder="Neues Paswort" required>
+												<input type="password" name="new_password" class="custom-input" placeholder="Neues Passwort" required>
 												@if ($errors->has('new_password'))
                           							<span class="invalid" role="alert">
                               							<strong>{{ $errors->first('new_password') }}</strong>
@@ -47,10 +47,10 @@ Settings
 										</div>
 										<div class="form-group row">
 											<div class="col-lg-4 col-sm-6">
-												Paswort Beastatigen
+											Passwort bestätigen
 											</div>
 											<div class="col-lg-8 col-sm-6">
-												<input type="password" name="new_password_confirmation" class="custom-input" placeholder="Paswort Beastatigen" required>
+												<input type="password" name="new_password_confirmation" class="custom-input" placeholder="Passwort bestätigen" required>
 											</div>
 										</div>
 										<div class="form-group text-center m-0">
@@ -62,7 +62,7 @@ Settings
 										<div class="form-check">
 										  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
 										  <label class="form-check-label" for="defaultCheck1">
-										   La mochte uber Neuingkeiten per E-mail informiert werden
+										  Ich möchte per E-Mail, über Neuigkeiten, informiert werden.
 										  </label>
 										</div>
 									</div>

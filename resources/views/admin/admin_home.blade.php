@@ -39,27 +39,27 @@
                   <td>{{ $dealer->business_name }}</td>
                   @if(($dealer->status_id)==1)
                     <td>
-                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="View this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Edit this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <a href="{{ route('blockdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-ban" style="color: darkred" title="Block this Dealer"></i></a>
-                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Delete this Dealer" onclick="return delete_confirm()"></i></a>
+                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="Diesen Anbieter anzeigen" data-profile='<?php echo $formdata; ?>'></i>
+                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Bearbeite diesen Anbieter" data-profile='<?php echo $formdata; ?>'></i>
+                        <a href="{{ route('blockdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-ban" style="color: darkred" title="Diesen Anbieter blockieren"></i></a>
+                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Diesen Anbieter löschen" onclick="return delete_confirm()"></i></a>
                     </td>
                   @endif
                   @if(($dealer->status_id)==2)
                     <td>
-                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="View this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Edit this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <a href="{{ route('acceptdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-thumbs-o-up" style="color: green" title="Accept this Dealer"></i></a>
-                        <a href="{{ route('blockdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-ban" style="color: darkred" title="Block this Dealer"></i></a>
-                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Delete this Dealer" onclick="return delete_confirm()"></i></a>
+                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="Diesen Anbieter anzeigen" data-profile='<?php echo $formdata; ?>'></i>
+                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Bearbeite diesen Anbieter" data-profile='<?php echo $formdata; ?>'></i>
+                        <a href="{{ route('acceptdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-thumbs-o-up" style="color: green" title="Akzeptieren Sie diesen Anbieter"></i></a>
+                        <a href="{{ route('blockdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-ban" style="color: darkred" title="Diesen Anbieter blockieren"></i></a>
+                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Diesen Anbieter löschen" onclick="return delete_confirm()"></i></a>
                     </td>
                   @endif
                   @if(($dealer->status_id)==3)
                     <td>
-                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="View this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Edit this Dealer" data-profile='<?php echo $formdata; ?>'></i>
-                        <a href="{{ route('acceptdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-thumbs-o-up" style="color: green" title="Accept this Dealer"></i></a>
-                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Delete this Dealer" onclick="return delete_confirm()"></i></a>
+                        <i class="fa fa-eye modal-view" style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#modal-info" title="Diesen Anbieter anzeigen" data-profile='<?php echo $formdata; ?>'></i>
+                        <i class="fa fa-edit modal-edit" style="color: SaddleBrown; cursor: pointer;" data-toggle="modal" data-target="#modal-edit" title="Bearbeite diesen Anbieter" data-profile='<?php echo $formdata; ?>'></i>
+                        <a href="{{ route('acceptdealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-thumbs-o-up" style="color: green" title="Akzeptieren Sie diesen Anbieter"></i></a>
+                        <a href="{{ route('deletedealer',['id' => $dealer->user_id ]) }}"><i class="fa fa-trash-o" style="color: red" title="Diesen Anbieter löschen" onclick="return delete_confirm()"></i></a>
                     </td>
                   @endif
                 </tr>
@@ -79,14 +79,14 @@
                             <p>
                                 <form id="edit_dealer" method="POST" action="{{ route('editdealer') }}">
                                 @csrf
-                                <strong>Business</strong><input type="text" class="form-control" value="{{ old('business_name') }}" name="business_name" id="business_name" style="color: black;" required>
+                                <strong>Geschäft</strong><input type="text" class="form-control" value="{{ old('business_name') }}" name="business_name" id="business_name" style="color: black;" required>
                                     @if ($errors->has('business_name'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('business_name') }}</strong>
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Name</strong><input type="text" class="form-control" value="{{ old('name') }}" name="name" id="name" style="color: black;" required>
+                                    <strong>Vorrname</strong><input type="text" class="form-control" value="{{ old('name') }}" name="name" id="name" style="color: black;" required>
                                     @if ($errors->has('name'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -101,14 +101,14 @@
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Address</strong><textarea class="form-control" name="address" id="address" style="color: black;" required>{{ old('address') }}</textarea>
+                                    <strong>Adresse</strong><textarea class="form-control" name="address" id="address" style="color: black;" required>{{ old('address') }}</textarea>
                                     @if ($errors->has('address'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Website</strong><input type="text" class="form-control" value="{{ old('website') }}" name="website" id="website" style="color: black;">
+                                    <strong>Webseite</strong><input type="text" class="form-control" value="{{ old('website') }}" name="website" id="website" style="color: black;">
                                     <br><br>
                                     <strong>Zipcode</strong><input type="text" class="form-control" value="{{ old('zipcode') }}" name="zipcode" id="zipcode" style="color: black;" required>
                                     @if ($errors->has('zipcode'))
@@ -117,14 +117,14 @@
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Contact Number</strong><input type="text" class="form-control" value="{{ old('contact') }}" name="contact" id="contact" style="color: black;" required>
+                                    <strong>Telefonnumber</strong><input type="text" class="form-control" value="{{ old('contact') }}" name="contact" id="contact" style="color: black;" required>
                                     @if ($errors->has('contact'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('contact') }}</strong>
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>About <span class="business"></span></strong><textarea name="about" id="about" class="form-control" style="color: black;" required>{{ old('about') }}</textarea>
+                                    <strong>Über <span class="business"></span></strong><textarea name="about" id="about" class="form-control" style="color: black;" required>{{ old('about') }}</textarea>
                                     @if ($errors->has('about'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('about') }}</strong>
@@ -134,8 +134,8 @@
                             </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal"><strong>Close</strong></button>
-                                <button type="submit" form="edit_dealer" class="btn btn-outline"><strong>Save changes</strong></button>
+                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal"><strong>Schließen</strong></button>
+                                <button type="submit" form="edit_dealer" class="btn btn-outline"><strong>Änderungen speichern</strong></button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -153,17 +153,17 @@
                             </div>
                             <div class="modal-body">
                                 <p>
-                                    <strong>Name :</strong> <span class="viewname"></span><br>
+                                    <strong>Vorrname :</strong> <span class="viewname"></span><br>
                                     <strong>E-Mail :</strong> <span class="viewemail"></span><br>
-                                    <strong>Address :</strong> <span class="viewaddress"></span><br>
-                                    <strong>Website :</strong> <a href="" target="_blank" class="viewwebsitelink"><span class="viewwebsite"></span></a><br>
+                                    <strong>Adresse :</strong> <span class="viewaddress"></span><br>
+                                    <strong>Webseite :</strong> <a href="" target="_blank" class="viewwebsitelink"><span class="viewwebsite"></span></a><br>
                                     <strong>Zipcode :</strong> <span class="viewzipcode"></span><br>
-                                    <strong>Contact Number :</strong> <span class="viewcontact"></span><br><br>
-                                    <strong>About <span class="viewbusiness"></span></strong><div class="viewabout"></div>
+                                    <strong>Telefonnumber :</strong> <span class="viewcontact"></span><br><br>
+                                    <strong>Über <span class="viewbusiness"></span></strong><div class="viewabout"></div>
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Schließen</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->

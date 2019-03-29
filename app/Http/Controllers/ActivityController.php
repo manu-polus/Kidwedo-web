@@ -138,7 +138,9 @@ class ActivityController extends Controller
         $request_array = json_decode($request->get('query'));
         $query = DB::table('events')
                         ->join('dealers', 'dealers.id', '=', 'events.dealer_id')
-                        ->select('events.*', 'dealers.business_name')
+                        ->join('category','category.id','=','events.category_id')
+                        ->join('preferred_ages','preferred_ages.id','=','events.preferred_age_id')
+                        ->select('events.*', 'dealers.business_name','preferred_ages.description AS age','category.description AS category','category.icon_file_name AS icon')
                         ->where('events.dealer_id', '=', $request_array->provider);
         if(is_array($request_array->age_group))
             $query->whereIn('events.preferred_age_id', $request_array->age_group);
@@ -172,17 +174,17 @@ class ActivityController extends Controller
         return $result;
     }
 
-    public function getNextFiveActivitiesBasedEvent($event_id)
+    public function getNextFiveActivitiesBasedEvent($event)
     {
         $mytime = Carbon::now();
         $date = $mytime->format("Y-m-d");
         $time = $mytime->format("H:i:s");
-
         $result = DB::table('event_dates AS ed')
         ->join('events AS e','e.id','=','ed.event_id')
-        ->where('e.id','=',$event_id)
+        ->select('ed.*','e.*','ed.id AS event_date_id')
+        ->where('e.id','=',$event)
         ->where('ed.date','>=',$date)
-        ->where('ed.from_time','>=',$time)
+        //->where('ed.from_time','>=',$time)
         ->skip(0)
         ->take(5)
         ->orderBy('ed.date', 'asc')
@@ -220,18 +222,17 @@ class ActivityController extends Controller
                         ->where('event_dates.id', '=', $slot)
                         ->first();
                         
-        if($activity->seat_remaining < 1) return Redirect::back()->withErrors('No seats available');
+        if($activity->seat_remaining < 1) return Redirect::back()->withErrors('Keine Plätze verfügbar');
         $user_credits = User::where('id', '=', $user_id)
                     ->pluck('available_credits')
                     ->first();
-        if($user_credits < $activity->credit) return Redirect::back()->withErrors("You don't have sufficient credit balance!");
+        if($user_credits < $activity->credit) return Redirect::back()->withErrors("Sie haben kein ausreichendes Guthaben!");
 
         $purchase_id = DB::table('purchases')
                 ->insertGetId([
                     'user_id' => $user_id,
                     'event_plan_id' => $activity->event_date_id,
                     'purchase_type_code' => 2,
-                    'purchase_status'=> 'Active',
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now()
                 ]);
@@ -288,7 +289,7 @@ class ActivityController extends Controller
             $query = "CALL GET_KWD_DEALER_EVENTS('". $request_json ."')";
             //echo $query;die;
             $data['events'] = DB::select($query);
-            dd($data['events']);
+            //dd($data['activities']);
         return view('partner.api.activity-booked', $data);
     }
 

@@ -7,7 +7,7 @@
         <div class="col-lg-6">
             <div class="box box-info">
             <div class="box-header with-border text-center">
-              <h3 class="box-title">Euro - Credit Exchange Rate</h3>
+              <h3 class="box-title">Euro-Credit-Wechselkurs</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -38,8 +38,8 @@
                 </div>
                 <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right" form="rate_form">Update</button>
+                <button type="submit" class="btn btn-default">Stornieren</button>
+                <button type="submit" class="btn btn-info pull-right" form="rate_form">Aktualisieren</button>
               </div>
               <!-- /.box-footer -->
             </form>

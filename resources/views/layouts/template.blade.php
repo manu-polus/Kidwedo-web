@@ -71,7 +71,7 @@
 							<li class="nav-item Highlight-menu dropdown my-account">
 				     	 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>{{ auth()->user()->name }}</a>
 				     	  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								 		<a class="dropdown-item" href="{{ route('account_settings') }}">Einstellungen</a><!-- Account Settings -->
+								 		<a class="dropdown-item" href="{{ route('account_settings') }}">Kontoeinstellugen</a><!-- Account Settings -->
 					          <a class="dropdown-item" href="{{ route('profile') }}">Mein profil</a><!-- Profile -->
 										<a class="dropdown-item" href="{{ route('credits.view') }}">Credits</a>
 										<a class="dropdown-item" href="{{ route('messages.view') }}">Nachrichten @if(count($unread_messages) > 0)<span class="msg-notification">{{ count($unread_messages) }}</span>@endif</a><!-- Message -->
@@ -148,8 +148,15 @@
 					</div>
 				</div>
 			</section>
-			@include('cookieConsent::index')
 			<!--footer-end-->
+			<!--cookie popup-->
+			<div class="cookie-popup-outer p-15" id="cookie_popup">
+					<p>Um Ihnen einen optimalen Service auf unserer Webseite bieten zu können, verwenden wir Cookies zur Verbesserung der Funktionalität sowie zu Analysezwecken. Durch die weitere Nutzung dieser Webseite stimmen Sie der Nutzung von Cookies zu
+						<a href="{{ route('privacy_policy') }}">Mehr erfahren</a>
+					</p>
+					<button type="button" class="kid-btn kid-small-btn" id="hide_cookie_popup">Einverstanden</button>
+				</div>
+			<!--cookie popup-->
 </div><!--outer-end-->
 	<script src="{{ asset('js/popper.min.2019.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>

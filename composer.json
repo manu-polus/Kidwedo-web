@@ -12,8 +12,7 @@
         "laravel/framework": "5.7.*",
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
-        "paypal/rest-api-sdk-php": "^1.13",
-        "spatie/laravel-cookie-consent": "^2.7"
+        "paypal/rest-api-sdk-php": "^1.13"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

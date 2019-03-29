@@ -148,8 +148,8 @@ My Messages
 				       </div>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Close</button>
-			        <button type="submit" form="reply_message" class="kid-btn kid-small-btn">Send</button>
+			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Schließen</button>
+			        <button type="submit" form="reply_message" class="kid-btn kid-small-btn">Senden</button>
 			      </div>
 			    </div>
 			  </div>

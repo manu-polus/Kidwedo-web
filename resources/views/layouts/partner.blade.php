@@ -67,7 +67,7 @@
 							<li class="nav-item Highlight-menu dropdown my-account">
 				     	 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>MEIN PROFIL<!-- My Profile --></a>
 				     	  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          <a class="dropdown-item" href="{{ route('partner_account_settings') }}">Einstellungen</a><!-- Account Settings -->
+					          <a class="dropdown-item" href="{{ route('partner_account_settings') }}">Kontoeinstellugen</a><!-- Account Settings -->
 										<a class="dropdown-item" href="{{ route('partner_profile') }}">Mein profil</a><!-- Profile -->
 										<a class="dropdown-item" href="{{ route('partner_credits') }}">Credits</a><!-- Credits -->
 										<a class="dropdown-item" href="{{ route('partner_messages.view') }}">Nachrichten @if(count($unread_messages) > 0)<span class="msg-notification">{{ count($unread_messages) }}</span>@endif</a><!-- Message -->

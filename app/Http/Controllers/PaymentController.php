@@ -164,7 +164,6 @@ class PaymentController extends Controller
             $purchase->purchase_status = "Active";
             $purchase->save();
 
-            \Session::put('success', 'Payment success! You can now Login!');
             $data['payment'] = $payinfo;
             //return redirect()->route('paymentinfo',['id' => $payinfo->id]);
             return view('payment',$data);

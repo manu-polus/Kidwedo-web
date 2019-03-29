@@ -323,11 +323,11 @@ $("#edit-activity-submit").on("click", function(event){
 	event.preventDefault();
 	$(".date_error").html('');
 	if($("#event-dates").val() == ""){
-		$(".date_error").html('<span class="invalid" role="alert"><strong>Please select date!</strong></span>');
+		$(".date_error").html('<span class="invalid" role="alert"><strong>Bitte Datum auswählen!</strong></span>');
 		return false;
 	}
 	if(dates.length == 0){
-		$("#time_list").html('<span class="invalid" role="alert"><strong>Please select atleast one timeslot!</strong></span>');
+		$("#time_list").html('<span class="invalid" role="alert"><strong>Bitte wähle mindestens ein Zeitfenster aus!</strong></span>');
 		return false;
 	}
 	$("#date_list_input").val($("#event-dates").val());

@@ -152,7 +152,7 @@ Activities
 						</div>
 					</div>
 					<h5 class="selected-day current-day"></h5>
-					<h5 class="selected-day popular-day" style="display:none;">POPULAR ACTIVITIES</h5>
+					<h5 class="selected-day popular-day" style="display:none;">Beliebteste Angebote</h5>
 					</div>
 					<!--calender end-->
 					<div class="col-lg-12 resulting-section" id="activity-calender-result"><!--listing-result-->
@@ -313,7 +313,7 @@ function getActivitiesREST( json_data )
                 success: function(d) {
 							if(d=="") {
 								empty = true;
-								$("#activity-calender-result").append('<div class="list-result-outer"><div class="row"><div class="col-lg-12 a-not-found text-center v-h-center"><div><h3>LOOKS LIKE THERE NO ACTIVITY FOUND</h3><p>Check out a different day or update your filters to join in on the fun!</p></div></div></div></div>');
+								$("#activity-calender-result").append('<div class="list-result-outer"><div class="row"><div class="col-lg-12 a-not-found text-center v-h-center"><div><h3>Es wurde keine Aktivität gefunden</h3><p>Sieh dir einen anderen Tag an, oder aktualisiere die Filter, um mehr zu erleben!</p></div></div></div></div>');
 							}
 							else{
 								$("#activity-calender-result").append(d);

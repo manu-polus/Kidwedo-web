@@ -12,13 +12,13 @@
 			<img src="{{ asset('images/rating.png') }}" class="img-fluid"><span class="f-av">Bewertungen 4</span>
 			<div class="f-details w-100">
                 <p>Ort: {{$event->city}}</p>
-				<p>Alter: </p>
+				<p>Alter: {{$event->age}}</p>
                 <p>Anbieter: {{$event->business_name}}</p>
 			</div>
 		</div>
 		<div class="col-lg-2 flex">
 			<div class="f-icon-outer">
-				<img src="{{ asset('images/tree-icon.png') }}" class="img-fluid" width="40px;">
+				<img src="{{ asset('images/category/'.$event->icon) }}" class="img-fluid" width="40px;">
 			</div>
 			<div class="credit-outer">
 				<p><img src="{{ asset('images/credit-icon.png') }}" width="10px">{{$event->credit}} Credits</p>
@@ -39,8 +39,8 @@
 	<div class="row">
 		<div class="col-lg-12 a-not-found text-center v-h-center">
 			<div>
-				<h3>LOOKS LIKE THERE NO ACTIVITY FOUND</h3>
-				<p>Check out a different day or update your filters to join in on the fun!</p>
+				<h3>Es wurde keine Aktivität gefunden</h3>
+				<p>Sieh dir einen anderen Tag an, oder aktualisiere die Filter, um mehr zu erleben!</p>
 			</div>
 		</div>
 	</div>

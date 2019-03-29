@@ -17,7 +17,7 @@ Register
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="form-group text-center">
-                                    <a href="{{url('/redirect')}}"><button type="button" class="fb-link-btn w-100"><i class="fab fa-facebook-f"></i> LOG IN MIT FACEBOOK</button></a>
+                                    <a href="{{url('/redirect')}}"><button type="button" class="fb-link-btn w-100"><i class="fab fa-facebook-f"></i>Mit Facebook anmelden</button></a>
 										<small class="or">ODER</small>
                                     </div>
                                     <form method="POST" action="{{ route('register') }}">
@@ -56,7 +56,7 @@ Register
                                             @endif
                                         </div>
 								        <div class="form-group">
-									        <input type="password" class="custom-input" placeholder="paswort" name="password" required>
+									        <input type="password" class="custom-input" placeholder="passwort" name="password" required>
                                             @if ($errors->has('password'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -64,7 +64,7 @@ Register
                                             @endif
                                         </div>
 								        <div class="form-group">
-									        <button type="submit" class="kid-btn w-100">ANMELDEN</button>
+									        <button type="submit" class="kid-btn w-100">Registrieren </button>
                                         </div>
                                     </form>
 								    <div class="form-group register-dis">

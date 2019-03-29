@@ -1,7 +1,7 @@
 @extends('layouts.partner')
 
 @section('title')
-Partner Login
+Anbieter Login
 @endsection
 @section('content')
 <!--login-contents-->
@@ -18,7 +18,7 @@ Partner Login
 		<div class="login-outer">
 			<div class="row">
 				<div class="col-lg-12 text-center mb-20">
-					<h2>{{ __('PARTNER LOGIN') }}</h2>
+					<h2>{{ __('Anbieter Login') }}</h2>
 				</div>
 				<div class="col-lg-12">
 					<div class="login-subouter">
@@ -35,7 +35,7 @@ Partner Login
                                         @endif
                                     </div>
 								    <div class="form-group">
-									    <input type="password" class="login-input" placeholder="{{ __('Password') }}" name="password" required>
+									    <input type="password" class="login-input" placeholder="{{ __('Passwort') }}" name="password" required>
                                         @if ($errors->has('password'))
                                             <span class="invalid" role="alert">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -45,14 +45,14 @@ Partner Login
 								    <div class="form-group form-check">
 									    <input class="form-check-input" type="checkbox" name="remember" id="defaultCheck1" {{ old('remember') ? 'checked' : '' }}>
 									    <label class="form-check-label" for="defaultCheck1">
-									    {{ __('Remember Me') }}
+									    {{ __('Erinnere dich an mich') }}
 									    </label>
 								    </div>
 								    <div class="form-group">
-									    <button type="submit" class="kid-btn w-100">{{ __('PARTNER LOGIN') }}</button>
+									    <button type="submit" class="kid-btn w-100">{{ __('Anbieter Login') }}</button>
 								    </div>
 								    <div class="form-group forgot-password">
-									    <a href="{{ route('password.request') }}">Forgot password ?</a>
+									    <a href="{{ route('password.request') }}">Passwort vergessen ?</a>
 								    </div>
                                 </form>
                             </div>

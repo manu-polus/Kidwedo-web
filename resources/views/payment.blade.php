@@ -9,26 +9,26 @@ Booking success
 		<div class="row p-15">
 			<div class="col-lg-12 text-center">
 				<i class="fas fa-check-circle verify-icon"></i>
-				<h4>YOUR PAYMENT WAS SUCCESSFUL</h4>
+				<h4>Ihre Zahlung war erfolgreich</h4>
 			</div>
 			<div class="col-lg-12 mb-15">
 				<div class="ticket-outer">
 					<span class="ticket-icon"><i class="fas fa-money"></i></span>
 					<div class="row p-15">
 						<div class="col-lg-6 booking-label bold-600">
-							TRANSACTION ID
+							Transaktions-ID
 						</div>
 						<div class="col-lg-6 break-word">
 							{{ $payment->transaction_id }}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-							AMOUNT
+						Menge
 						</div>
 						<div class="col-lg-6">
                         {{ $payment->amount }} {{ $payment->currency }}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-                            BENEFIT
+						Vorteil
 						</div>
 						<div class="col-lg-6">
                             Added {{ $payment->credits }} more credits in your Account!

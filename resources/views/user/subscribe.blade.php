@@ -26,48 +26,16 @@ Subscribe
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12">
-									<h5>KIDWED EALEBEN</h5>
+									<h5>KIDWEDO ERLEBEN</h5>
 									<div class="subscribe-outer w-100">
-										<h6>Erster Monat fur €10 testen</h6>
-										<p>Die Testeversion beginnt zun zeitpunkt des kaufs und dauert eienen monat.</p>
-										<p>Nach der Testphase verlangert sich ihre Mitgliedschaft automatisch um den Basisplan von 40€ pro monat.Sie konnen ihren
-											Plan jederzeit andern oder stornieren
-										</p>
-										<div class="promocode w-100">
-											<input type="password" class="custom-input" placeholder="Promocode">
-											<button type="button" class="kid-btn input-equal-btn">Los GEHT's</button>
-										</div>
+										<h6>Teste Kidwedo für 10€</h6>
+										<p>Die Testversion beginnt zum Zeitpunkt des Kaufs und gilt einen Monat. Nach der Testphase verlängert sich deine Mitgliedschaft automatisch um 40€ pro Monat.
+										 Du kannst deine Mitgliedschaft jederzeit kündigen. </p>
+										
+										
 									</div>
-									<div class="subscribe-outer w-100 prices">
-										<div class="row">
-											<div class="col-10">
-													<span>Monatliches Abonnement</span>
-											</div>
-											<div class="col-2 text-right">
-													<span><b>40€</b></span>
-											</div>
-										</div>
-									</div>
-									<div class="subscribe-outer w-100 prices">
-										<div class="row">
-											<div class="col-10">
-													<span>Rabatt</span>
-											</div>
-											<div class="col-2 text-right">
-													<span><b>30€</b></span>
-											</div>
-										</div>
-									</div>
-									<div class="subscribe-outer w-100 prices active-price">
-										<div class="row">
-											<div class="col-10">
-													<span>Erster Monat</span>
-											</div>
-											<div class="col-2 text-right">
-													<span><b>30€</b></span>
-											</div>
-										</div>
-									</div>
+									
+									
 								</div>
 								
 							</div>
@@ -81,11 +49,11 @@ Subscribe
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="subscribe-outer w-100 select-p">
-										<h6>Vorteile der kidwedo-Mitgliedschaft</h6>
+										<h6>Vorteile der Kidwedo-Mitgliedschaft</h6>
 										<ul>
-											<li>Buche Innerhalb von 5 Minuten Erlenisse bei hunderten von Anbietern</li>
-											<li>Habe keine Verpflichtungen.Monatlich kundbar</li>
-											<li>Entdecke Angebote die es sonst niergends gibt.</li>
+											<li>Buche innerhalb von 5 Minuten die besten Erlebnisse</li>
+											<li>Monatlich kündbar, ohne Verpflichtungen</li>
+											<li>Entdecke Angebote von privaten Anbietern, die ausschließlich bei Kidwedo verfügbar sind </li>
 										</ul>
 									</div>
 									
@@ -118,19 +86,19 @@ Subscribe
 												<input type="password" class="custom-input" placeholder="PIN">
 											</div>
 										</div> -->
-										<p>Durch Klicken auf die Schaltfläche „Kauf abschließe, erklären Sie sich mit
-											Unseren Nutzungsbedingungen und der datenschutzerklarung einverstanden.Sie 
-											konnen jederzeit kundigen.
+										<p>Durch klicken auf den Button “Zahlen mit PayPal / Kreditkarte“ erklärst du dich mit 
+											unseren Nutzungsbedingungen und der Datenschutzerklärung einverstanden.
+											 Du kannst jederzeit kündigen.
                       					</p>
-										<p class="bold-600">Kidwedo setzt Ihre Mitgliedschaft automatisch monatlich fort und belastet 
-					                      Ihre Kreditkarte monatlich mit dem Mitgliedsbeitrag mit 40€ im voraus, bis 
-					                      Sie kündigen. Es gibt keine Rückerstattung oder Gutschrift für Teilmonate.
+										<p class="bold-600">Kidwedo setzt deine Mitgliedschaft automatisch fort und belastet, nach der einmaligen Testversion von 10€,
+											 deine Kreditkarte mit 40€ im Voraus, bis du kündigst. Es gibt keine Rückerstattung oder
+											  Gutschrift für die Kündigung innerhalb eines laufenden Monats. 
 										</p>
 										<form method="POST" id="payment-form" action="{!! URL::to('paypal') !!}">
 											@csrf
 											<input class="w3-input w3-border" id="amount" type="hidden" name="amount" value="30">
 											<input class="w3-input w3-border" id="currency" type="hidden" name="currency" value="EUR">
-											<button class="kid-btn w-100">PAY WITH PAYPAL / CREDIT CARD</button>
+											<button class="kid-btn w-100">ZAHLEN MIT PAYPAL / KREDITKARTE</button>
 										</form>
 									</div>
 									

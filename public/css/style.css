@@ -41,8 +41,8 @@
 
 .login-banner
 {
-	background: url(../images/login-banner.jpg);
-	background-size: cover;
+	
+	background: #fff;
 	padding-top: 60px;
 	padding-bottom: 60px;
 }
@@ -85,8 +85,11 @@
 {
 	width: 70%;
 	margin:auto;
-	background: #ffffff1c;
+	background: #fff;
 	padding: 15px;
+	-webkit-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.2);
 }
 .login-subouter
 {
@@ -96,7 +99,7 @@
 }
 .login-subouter .form-check
 {
-	color: #fff;
+	color: #424242;
 }
 
 button:focus
@@ -112,6 +115,7 @@ button:focus
 	color: #fff;
 	font-weight: 600;
 	cursor: pointer;
+	text-transform: uppercase;
 }
 .kid-btn:hover
 {
@@ -120,11 +124,11 @@ button:focus
 }
 .forgot-password a
 {
-	color: #fff;
+	color: #424242;
 }
 .forgot-password a:hover
 {
-	color: #fff;
+	color: #424242;
 }
 
 .footer
@@ -291,6 +295,10 @@ button:focus
 	padding-bottom: 10px;
 	margin:0;
 	border-bottom: solid 1px #ff97a6;
+	font-weight: 600;
+    font-weight: 600;
+    color: #ff7387;
+    text-transform: uppercase;
 }
 .subscribe-outer
 {
@@ -414,14 +422,17 @@ button:focus
 {
 	font-size: 40px;
 	font-weight: 600;
+	color: #ff7387;
 }
 .mob-app-img h4
 {
 	margin-bottom: 40px;
+	color: #ff7387;
+	font-weight: 600;
 }
 .mobile-app
 {
-	background: #b4ddd9;
+	background: #fff;
 }
 .app-discription
 {
@@ -455,13 +466,13 @@ button:focus
 }
 .thumb-2
 {
-	background: #dcaad7;
+	background: #e0b1db;
 	border-radius: 15px;
 	height: 200px;
 }
 .thumb-3
 {
-	background: #f5beb9;
+	background: #fbbebb;
 	border-radius: 15px;
 	height: 200px;
 }
@@ -503,7 +514,7 @@ button:focus
 }
 .inspire-slider
 {
-	background: #ff97a6;
+	background: #f5beb9;
 	padding-bottom: 70px;
 	padding-top: 40px;
 }
@@ -511,7 +522,7 @@ button:focus
 {
 	margin-bottom: 40px;
 	font-weight: 600;
-	color: #fff;
+	color: #ff7387;
 }
 .slider-list .slider-captions h5
 {
@@ -525,20 +536,21 @@ button:focus
 }
 .slider-list
 {
-	background: #e0b1db;
+	background: #aa95a8;
 	padding: 10px;
 	border: solid 5px #fff;
 }
 .discover
 {
 	padding-top: 40px;
-	padding-bottom: 10px;
+	padding-bottom: 40px;
+	background: #b4ddd9;
 }
 .discover h4
 {
 	margin-bottom: 40px;
 	font-weight: 600;
-	color: #000;
+	color: #ff7387;
 	text-align: center;
 }
 .discover-img-outer
@@ -561,6 +573,7 @@ button:focus
 	text-align: center;
 	margin-bottom: 20px;
 	font-weight: 600;
+	color: #ff7387;
 }
 .profile-outer h5
 {
@@ -596,7 +609,7 @@ button:focus
 }
 .account-form
 {
-	background: #ecfbf9;
+	background: #b4ddd9;
 	padding: 20px;
 	margin-bottom: 10px;
 }
@@ -702,12 +715,12 @@ button:focus
 }
 .week-list .c-active
 {
-	background: #e0b1db;
+	background: #ff97a6;
 	color: #fff;
 }
 .week-list .c-active:hover
 {
-	background: #e0b1db;
+	background: #b4ddd9;
 	color: #fff;
 }
 .week-list
@@ -980,7 +993,7 @@ button:focus
 	font-size: 17px;
 	text-align: center;
 	margin:0;
-	background: #e0b1db;
+	background: #ff97a6;
 	color: #fff;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -1131,6 +1144,9 @@ button:focus
 	margin: 0;
 	margin-bottom: 0px;
 	border-bottom: solid 1px #ff97a6;
+	font-weight: 600;
+    color: #ff7387;
+    text-transform: uppercase;
 }
 .d-b
 {
@@ -1237,7 +1253,7 @@ button:focus
   .time-list li
  {
  	list-style: none;
- 	color: 
+ 	
  }
  .a-not-found
  {
@@ -1344,7 +1360,7 @@ button:focus
  }
  .sub-layer-outer
  {
- 	background: #ecfbf9;
+ 	background: #b4ddd9;
  	width: 94%;
  	margin: auto;
  	margin-top: 20px;
@@ -1367,7 +1383,7 @@ button:focus
  }
  .verify-icon
  {
- 	color: #77be22!important;
+ 	color: #ff97a6 !important;
  	font-size: 38px;
  }
  .booksuccess-outer h4
@@ -1668,6 +1684,7 @@ button:focus
  	border-radius: 50%;
  	margin-bottom: 20px;
  	height: 150px;
+ 	border: solid #424242;
  }
  .team-caption h4
  {
@@ -1812,7 +1829,7 @@ button:focus
  	position: absolute;
  	bottom: 20px;
  	left: 10px;
- 	width: 40%;
+ 	width: 360px;
  }
  .home-bar
  {
@@ -1822,11 +1839,11 @@ button:focus
  {
 	padding: 15px;
 	border-radius: 5px;
- 	width: 100%;
+ 	width: 360px;
  	color: #fff;
  	position: absolute;
- 	right: -41px;
- 	top: -244px;
+ 	right: -90px;
+ 	top: -8em;
  	font-size: 2em;
  }
  
@@ -1856,6 +1873,47 @@ button:focus
  .bar-btn
  {
  	background: #ffabb8;
+ }
+ .bg-color-1
+ {
+ 	background: #b4ddd9;
+ }
+ .bg-color-2
+ {
+ 	background: #dcaad7;
+ }
+ .bg-color-3
+ {
+ 	background: #f5beb9;
+ }
+ .bg-color-4
+ {
+ 	background: #f992a2;
+ }
+ .color-1
+ {
+ 	color: #b4ddd9;
+ }
+ .color-2
+ {
+ 	color: #dcaad7;
+ }
+ .color-3
+ {
+ 	color: #f5beb9;
+ }
+ .color-4
+ {
+ 	color: #f992a2;
+ }
+ .discover .col-lg-3
+ {
+ 	margin-bottom: 10px;
+ }
+ .discover img
+ {
+ 	margin: auto;
+ 	display: block;
  }
  /*slick slider start*/
  .slide

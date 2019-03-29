@@ -45,7 +45,7 @@ My Messages
 					@if($messages == null)
 					<div class="col-lg-12 a-not-found text-center v-h-center">
 											<div>
-												<h3>You don't have any messages</h3>
+												<h3>Du hast derzeit keine Nachrichten</h3>
 											</div>
 							</div>
 					@endif
@@ -85,8 +85,8 @@ My Messages
 				       </div>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Close</button>
-			        <button type="submit" form="reply_message" class="kid-btn kid-small-btn">Send</button>
+			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Schließen</button>
+			        <button type="submit" form="reply_message" class="kid-btn kid-small-btn">Senden</button>
 			      </div>
 			    </div>
 			  </div>

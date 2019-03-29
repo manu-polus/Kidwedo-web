@@ -243,14 +243,14 @@ class AdminController extends Controller
             $user->password = Hash::make($request->input('new_password'));
             if($user->update())
             {
-                \Session::put('success', 'New password set. Please login with your new password');
+                \Session::put('success', 'Neues Passwort registriert. Bitte melde dich mit deinem neuen Passwort an');
                 Auth::logout();
                 return redirect()->route('login');
             }
         }
         else
         {
-            return redirect()->back()->with("message", "Your password dosen't match with your account!");
+            return redirect()->back()->with("message", "Ihr Passwort stimmt nicht mit Ihrem Konto überein!");
         }
     }
 
@@ -275,7 +275,7 @@ class AdminController extends Controller
         
             if($exchange_rate->save())
             {
-                return redirect()->back()->with('exchange_message','New exchange rate has been saved!');
+                return redirect()->back()->with('exchange_message','Neuer Wechselkurs wurde gespeichert!');
             }
         }
         else
@@ -285,7 +285,7 @@ class AdminController extends Controller
         
             if($exchange_rate_model->update())
             {
-                return redirect()->back()->with('exchange_message','New exchange rate has been updated!');
+                return redirect()->back()->with('exchange_message','Neuer Wechselkurs wurde aktualisiert!');
             }
         }
         

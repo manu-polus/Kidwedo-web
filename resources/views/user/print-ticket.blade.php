@@ -12,19 +12,19 @@ Kidewedo ticket
 					<span class="ticket-icon"><i class="fas fa-ticket-alt"></i></span>
 					<div class="row p-15">
 						<div class="col-lg-6 booking-label  bold-600">
-							Booking ID
+						Buchungs-ID
 						</div>
 						<div class="col-lg-6">
 							{{$ticket_details->ticket_id}}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-							Booked Activity
+						Gebuchtes Angebot
 						</div>
 						<div class="col-lg-6">
                         {{$ticket_details->event_name}}
 						</div>
 						<div class="col-lg-6 booking-label  bold-600">
-							Booked Date & Time
+						Datum und Zeit der Buchung
 						</div>
 						<div class="col-lg-6">
                             {{$ticket_details->date}}, {{$ticket_details->from_time}}

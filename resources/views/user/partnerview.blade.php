@@ -280,7 +280,7 @@ Partner View
 				       </div>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Cancel</button>
+			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Stornieren</button>
 			        <button type="submit" form="post_message" class="kid-btn kid-small-btn">Send</button>
 			      </div>
                 </div>
@@ -336,7 +336,7 @@ Partner View
 				       </div>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Cancel</button>
+			        <button type="button" class="kid-btn kid-small-btn kid-cancel-btn" data-dismiss="modal">Stornieren</button>
 			        <button type="submit" form="post_rating" class="kid-btn kid-small-btn">Rate</button>
 			      </div>
                 </div>

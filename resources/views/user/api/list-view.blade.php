@@ -8,7 +8,7 @@
 			<img src="{{ $activity->pic_filename === '' ? asset('images/activities-1.jpg') : asset($image) }}" class="img-fluid">
 		</div>
 		<div class="col-lg-4 f-listing-description">
-			<h4><a href="{{ route('activity.view',['id' => $activity->id ]) }}">{{$activity->event_name}}</a></h4>
+			<h4>{{$activity->event_name}}</h4>
 			<img src="{{ asset('images/rating.png') }}" class="img-fluid"><span class="f-av">Bewertungen 4</span>
 			<div class="f-details w-100">
                 <p>Ort: {{$activity->city}}</p>

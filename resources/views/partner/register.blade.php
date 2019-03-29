@@ -1,7 +1,7 @@
 @extends('layouts.partner')
 
 @section('title')
-Partner Registration
+Anbieter Anmeldung
 @endsection
 @section('content')
 <!--register-contents-->
@@ -10,7 +10,7 @@ Partner Registration
 		<div class="register-outer">
 			<div class="row">
 				<div class="col-lg-12 text-center mb-20">
-					<h2>PARTNER REGISTRATION</h2>
+					<h2>Anbieter Anmeldung</h2>
 				</div>
 				<div class="col-lg-12">
 						<div class="login-subouter">
@@ -28,7 +28,7 @@ Partner Registration
                                             @endif
 								        </div>
                                         <div class="form-group">
-                                            <input id="business_name" type="text" class="custom-input" name="business_name" value="{{ old('business_name') }}" placeholder="Business Name" required autofocus>
+                                            <input id="business_name" type="text" class="custom-input" name="business_name" value="{{ old('business_name') }}" placeholder="Unternehmen" required autofocus>
                                             @if ($errors->has('business_name'))
                                                 <span class="invalid" role="alert">
                                                     <strong>{{ $errors->first('business_name') }}</strong>
@@ -44,10 +44,10 @@ Partner Registration
                                             @endif
                                         </div>
 								        <div class="form-group">
-                                            <textarea id="address" type="text" class="form-control" name="address" style="resize: none;" rows="5" placeholder="Address">{{ old('address') }}</textarea>
+                                            <textarea id="address" type="text" class="form-control" name="address" style="resize: none;" rows="5" placeholder="Adresse">{{ old('address') }}</textarea>
                                         </div>
                                         <div class="form-group">
-                                            <textarea id="about" type="text" class="form-control" name="about" style="resize: none;" rows="5" placeholder="About your Business" required>{{ old('about') }}</textarea>
+                                            <textarea id="about" type="text" class="form-control" name="about" style="resize: none;" rows="5" placeholder="Über mein Angebot" required>{{ old('about') }}</textarea>
                                             @if ($errors->has('about'))
                                                 <span class="invalid" role="alert">
                                                     <strong>{{ $errors->first('about') }}</strong>
@@ -55,7 +55,7 @@ Partner Registration
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <input id="website" type="text" class="custom-input" name="website" value="{{ old('website') }}" placeholder="Website">
+                                            <input id="website" type="text" class="custom-input" name="website" value="{{ old('website') }}" placeholder="Webseite">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="custom-input" placeholder="Telefonnumber" name="phone" value="{{ old('phone') }}" required>
@@ -84,7 +84,7 @@ Partner Registration
 								    </div>
 								    <div class="form-group text-center">
 									    <p>Du hast bereits ein konto?</p>
-									    <a href="{{ route('login') }}"><button type="button" class="kid-btn login--btn w-100">LOGIN</button></a>
+									    <a href="{{ route('partnerlogin') }}"><button type="button" class="kid-btn login--btn w-100">LOGIN</button></a>
 								    </div>
 							    </div>
 						</div>

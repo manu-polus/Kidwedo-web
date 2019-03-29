@@ -51,14 +51,14 @@
                                 <form id="edit_dealer" method="POST" action="{{ route('edit_user') }}">
                                 @csrf
                                     <input type="hidden" id="id" value="" name="id">
-                                    <strong>Name</strong><input type="text" class="form-control" name="name" id="name" style="color: black;" value="" required>
+                                    <strong>Vorrname</strong><input type="text" class="form-control" name="name" id="name" style="color: black;" value="" required>
                                     @if ($errors->has('name'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Surname</strong><input type="text" class="form-control" name="surname" id="surname" style="color: black;" value="">
+                                    <strong>Nachname</strong><input type="text" class="form-control" name="surname" id="surname" style="color: black;" value="">
                                     @if ($errors->has('surname'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('surname') }}</strong>
@@ -72,14 +72,14 @@
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Address</strong><textarea class="form-control" name="address" id="address" style="color: black;">{{ old('address') }}</textarea>
+                                    <strong>Adresse</strong><textarea class="form-control" name="address" id="address" style="color: black;">{{ old('address') }}</textarea>
                                     @if ($errors->has('address'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                     @endif
                                     <br><br>
-                                    <strong>Contact Number</strong><input type="text" class="form-control" value="{{ old('contact') }}" name="contact" id="contact" style="color: black;" required>
+                                    <strong>Telefonnumber</strong><input type="text" class="form-control" value="{{ old('contact') }}" name="contact" id="contact" style="color: black;" required>
                                     @if ($errors->has('contact'))
                                     <span class="invalid-feedback" style="color: red" role="alert">
                                         <strong>{{ $errors->first('contact') }}</strong>
@@ -89,8 +89,8 @@
                             </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal"><strong>Close</strong></button>
-                                <button type="submit" form="edit_dealer" class="btn btn-outline"><strong>Save changes</strong></button>
+                                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal"><strong>Schließen</strong></button>
+                                <button type="submit" form="edit_dealer" class="btn btn-outline"><strong>Änderungen speichern</strong></button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
