@@ -123,27 +123,34 @@ Add Activity
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-						<label  class="bold-600">Ankommen</label>
-						<input type="text" class="custom-input" placeholder="Ankommen" name="arrive_before" value="{{ old('arrive_before') }}">
-						@if ($errors->has('arrive_before'))
-									<span class="invalid" role="alert">
-										<strong>{{ $errors->first('arrive_before') }}</strong>
-									</span>
-									@endif
-					</div>
+							<label  class="bold-600">Ankommen</label>
+							<!-- <input type="text" class="custom-input" placeholder="Ankommen" name="arrive_before" value="{{ old('arrive_before') }}"> -->
+							Before<select name="arrive_before" id="" class="custom-select custom-select-box">
+								<option value="">5 minutes</option>
+								<option value="">15 minutes</option>
+								<option value="">30 minutes</option>
+							</select>
+							@if ($errors->has('arrive_before'))
+										<span class="invalid" role="alert">
+											<strong>{{ $errors->first('arrive_before') }}</strong>
+										</span>
+										@endif
+						</div>
 				</div>
 				
 				<div class="col-lg-6">
 					<div class="form-group">
-						<div class="form-group">
 						<label  class="bold-600">Stornierungsbedingungen</label>
-						<input type="text" class="custom-input" placeholder="Stornierungsbedingungen" name="cancel_policy" value="{{ old('cancel_policy') }}">
+						<!-- <input type="text" class="custom-input" placeholder="Stornierungsbedingungen" name="cancel_policy" value="{{ old('cancel_policy') }}"> -->
+						Advance<select name="cancel_policy" id="" class="custom-select custom-select-box">
+							<option value="">1 hour</option>
+							<option value="">5 hours</option>
+						</select>
 						@if ($errors->has('cancel_policy'))
-									<span class="invalid" role="alert">
-										<strong>{{ $errors->first('cancel_policy') }}</strong>
-									</span>
-									@endif
-					</div>
+						<span class="invalid" role="alert">
+							<strong>{{ $errors->first('cancel_policy') }}</strong>
+						</span>
+						@endif
 					</div>
 				</div>
 				<div class="col-lg-12">

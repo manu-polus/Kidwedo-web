@@ -233,6 +233,7 @@ class ActivityController extends Controller
                     'user_id' => $user_id,
                     'event_plan_id' => $activity->event_date_id,
                     'purchase_type_code' => 2,
+                    'purchase_status'=> 'Active',
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now()
                 ]);

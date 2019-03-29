@@ -476,6 +476,37 @@ class DealerController extends Controller
         //dd($data['credits']);
         return view('partner.credits',$data);
     }
+    public function cancelActivity($id)
+    {
+        //dd($id);
+        $user_id = DB::table('event_dates as ed')
+                        ->join('events as e', 'ed.event_id', '=', 'e.id')
+                        ->where('ed.id', '=', $id)
+                        ->pluck('e.dealer_id')
+                        ->first();
+                        dd($user_id);
+        if($user_id !== null){
+            $cancel = DB::table('purchases')
+                ->insertGetId([
+                    'user_id' => $user_id,
+                    'event_plan_id' => $id,
+                    'purchase_type_code' => 2,
+                    'purchase_status'=> 'Refund',
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ]);
+            $redund = DB::table('purchases')
+                ->insertGetId([
+                    'user_id' => $user_id,
+                    'event_plan_id' => $id,
+                    'purchase_type_code' => 2,
+                    'purchase_status'=> 'Refund',
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ]);
+        }
+        
+    }
 
     public function str_lreplace($search, $replace, $subject)
     {
