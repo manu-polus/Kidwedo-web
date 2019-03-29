@@ -7,24 +7,26 @@
 				<div class="activity-view  add-activity-outer mb-20 w-70 m-auto">
 					<h5>KONTAKT</h5>
 					<div class="row p-15">
+						<form action="{{ route('contact_us.post') }}" method="post">
+							@csrf
 						<div class="col-lg-6">
 							<div class="form-group">
-								<input type="text" class="custom-input" placeholder="Name">
+								<input type="text" class="custom-input" placeholder="Name" name="name" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<input type="text" class="custom-input" placeholder="E-mail">
+								<input type="email" class="custom-input" placeholder="E-mail" name="email" required>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group">
-								<input type="text" class="custom-input" placeholder="Betreff">
+								<input type="text" class="custom-input" placeholder="Betreff" name="subject" required> 
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group">
-								<textarea class="custom-textarea" rows="4"  placeholder="Nachricht schreiben"></textarea>
+								<textarea class="custom-textarea" rows="4"  placeholder="Nachricht schreiben" name="message" required></textarea>
 							</div>
 						</div>
 						
@@ -34,7 +36,7 @@
 							</div>
 						</div>
 						
-						
+					</form>
 					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-6">

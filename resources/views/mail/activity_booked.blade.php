@@ -1,24 +1,19 @@
-Hallo {{ $booked->customer_name }},
+Hallo {{ $name }},<br><br>
 
-Vielen Dank für deine Buchung und viel Freude bei deinem Erlebnis!
+Vielen Dank für deine Buchung und viel Freude bei deinem Erlebnis!<br><br>
 
-Aktivitätsname: {{ $booked->event_name }}
-Koste: {{ $booked->cost }}
-Platz: {{ $booked->city }}
-Datum: {{ $booked->date }}
-Zeit: {{ $booked->time }}
-Begleitung erforderlich: {{ $booked->is_caregiver_required == 'Y' ? 'Ja' : 'Nein' }}
-Warm ankommen: {{ $booked->arrive_before }}
-Stornierungsbedingungen: {{ $booked->cancellation_policy }}
+Bezeichnung: {{ $event_name }}<br>
+Datum: {{ $date }}<br>
 
-Solltest du Fragen an uns haben, kannst du uns gern per E-Mail unter hello@kidwedo.de erreichen.
 
-Mit besten Grüßen
-Dein Kidwedo-Team
+Solltest du Fragen an uns haben, kannst du uns gern per E-Mail unter hello@kidwedo.de erreichen.<br>
 
-__________________________________
+Mit besten Grüßen<br>
+Dein Kidwedo-Team<br><br>
 
-Kidwedo
-Akazienstrasse 3A
-10823 Berlin
+__________________________________<br><br>
+
+Kidwedo<br>
+Akazienstrasse 3A<br>
+10823 Berlin<br>
 E-Mail: hello@kidwedo.de

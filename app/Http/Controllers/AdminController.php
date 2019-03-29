@@ -125,6 +125,7 @@ class AdminController extends Controller
 
         $user = User::where('id',$id)->first();
         $user->status_id = 1;
+        $mail_data['name'] = $user->name;
         if($user->update())
         {
             Mail::send('mail.provider_approved', ['provider' => $user], function ($m) use ($user) {

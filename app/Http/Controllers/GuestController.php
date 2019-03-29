@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\dealer;
 use App\UserRoles;
+use Mail;
 
 class GuestController extends Controller
 {
@@ -96,5 +97,26 @@ class GuestController extends Controller
 	            return 'layouts.partner';
         }
         return 'layouts.template';
+    }
+    public function postContactUs(Request $request)
+    {
+
+        /*$this->validate($request,[
+            'subject' => 'required|min:4',
+            'message' => 'required|min:5',
+            'email' => 'required|email'
+        ]);*/
+
+        $user['email'] = $request->input('email');
+        $user['name'] = $request->input('name');
+        $user['subject'] = $request->input('name');
+        
+        $mail_data['message'] = $request->input('message');
+
+
+        Mail::send('mail.activity_booked', $mail_data, function ($m) use ($user) {
+            $m->from($user['email'], 'Kidwedo');
+            $m->to('hello@kidwedo.de', $user['name'])->subject($user['subject']);
+        });
     }
 }

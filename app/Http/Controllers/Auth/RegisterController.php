@@ -93,7 +93,8 @@ class RegisterController extends Controller
             $insert_data['mobile_number'] = $data['phone'];
             $insert_data['status_id'] = 2;
             $insert_data['plan_id'] = '1';
-            $insert_data['password'] = Hash::make($data['email']);
+            $password = rand(26979,60000);
+            $insert_data['password'] = Hash::make($password);
 
             $user = User::create( $insert_data );
 
@@ -109,7 +110,10 @@ class RegisterController extends Controller
             $dealer_data['website'] = $data['website'];
             $partner = dealer::create( $dealer_data );
 
-            Mail::send('mail.provider_registered', ['provider' => $user], function ($m) use ($user) {
+            $mail_data['name'] = $user->name;
+            $mail_data['password'] = $password;
+
+            Mail::send('mail.provider_registered', $mail_data, function ($m) use ($user) {
                 $m->from('hello@kidwedo.de', 'Kidwedo');
                 $m->to($user->email, $user->name)->subject('Registrierungsbestätigung');
             });
@@ -133,7 +137,9 @@ class RegisterController extends Controller
             $role->user_role_type_id = $data['type'];
             $role->save();
 
-            Mail::send('mail.customer_registered', ['customer' => $user], function ($m) use ($user) {
+            $mail_data['name']=$user->name;
+
+            Mail::send('mail.customer_registered', $mail_data, function ($m) use ($user) {
                 $m->from('hello@kidwedo.de', 'Kidwedo');
                 $m->to($user->email, $user->name)->subject('Registrierungsbestätigung');
             });

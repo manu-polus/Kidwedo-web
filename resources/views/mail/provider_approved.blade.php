@@ -1,4 +1,4 @@
-Hallo {{ $provider->name }},
+Hallo {{ $name }},
 
 du wurdest als Anbieter bestätigt. Nun kannst du Angebote einstellen auf kidwedo.de.
 

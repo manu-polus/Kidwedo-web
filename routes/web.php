@@ -31,6 +31,8 @@ Route::get('career/job', 'GuestController@loadJob')->name('career_job');
 
 Route::get('contact-us', 'GuestController@loadContactUs')->name('contact_us');
 
+Route::get('contact-us/post', 'GuestController@postContactUs')->name('contact_us.post');
+
 Route::get('imprint', 'GuestController@loadImprint')->name('imprint');
 
 Route::get('about', 'GuestController@loadAboutUs')->name('about');

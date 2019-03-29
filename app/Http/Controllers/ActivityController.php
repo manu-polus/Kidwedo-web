@@ -262,7 +262,27 @@ class ActivityController extends Controller
                 ]);        
         $parameter =[
             'id' =>$purchase_id,
-        ];        
+        ];  
+        $provider_data = DB::table('dealers')
+            ->where('id', '=', $activity->dealer_id)
+            ->join('users','users.id', '=', 'dealers.user_id') 
+            ->select('business_name', 'email')
+            ->first();
+        $mail_data['event_name'] = $activity->name;
+        $mail_data['date'] = $activity->date;
+        $mail_data['name'] = Auth::user()->name;
+        $mail_data['provider_name'] = $provider_data->business_name;
+
+        Mail::send('mail.activity_booked', $mail_data, function ($m) use ($user) {
+            $m->from('hello@kidwedo.de', 'Kidwedo');
+            $m->to($user->email, $user->name)->subject('Bestätigung Aktivitätsbuchung');
+        });
+
+        Mail::send('mail.customer_booked_activity', $mail_data, function ($m) use ($provider_data) {
+            $m->from('hello@kidwedo.de', 'Kidwedo');
+            $m->to($provider_data->email, $provider_data->business_name)->subject('Registrierungsbestätigung');
+        });
+
         return redirect()->route('activity.booking.success', [Crypt::encrypt($parameter)]);
     }
     public function bookingSuccess($id)
