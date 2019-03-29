@@ -11,6 +11,7 @@ use App\User;
 use App\UserRoles;
 use App\Event;
 use App\CreditExchange;
+use Mail;
 
 class AdminController extends Controller
 {
@@ -126,6 +127,11 @@ class AdminController extends Controller
         $user->status_id = 1;
         if($user->update())
         {
+            Mail::send('mail.provider_approved', ['provider' => $user], function ($m) use ($user) {
+                $m->from('hello@kidwedo.de', 'Kidwedo');
+                $m->to($user->email, $user->name)->subject('Genehmigung als Anbieter');
+            });
+
             if(session('route_type')==0)
             {
                 session()->forget('route_type');

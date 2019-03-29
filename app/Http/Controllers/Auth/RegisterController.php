@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Mail;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -107,6 +108,11 @@ class RegisterController extends Controller
             $dealer_data['user_id'] = $user->id;
             $dealer_data['website'] = $data['website'];
             $partner = dealer::create( $dealer_data );
+
+            Mail::send('mail.provider_registered', ['provider' => $user], function ($m) use ($user) {
+                $m->from('hello@kidwedo.de', 'Kidwedo');
+                $m->to($user->email, $user->name)->subject('Registrierungsbestätigung');
+            });
             return $user;
             
         }
@@ -126,6 +132,12 @@ class RegisterController extends Controller
             $role->user_id = $user->id;
             $role->user_role_type_id = $data['type'];
             $role->save();
+
+            Mail::send('mail.customer_registered', ['customer' => $user], function ($m) use ($user) {
+                $m->from('hello@kidwedo.de', 'Kidwedo');
+                $m->to($user->email, $user->name)->subject('Registrierungsbestätigung');
+            });
+
             return $user;
         }
         

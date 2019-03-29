@@ -1,6 +1,6 @@
-Hallo {{ $customer->name }},
+Hallo {{ $customer->payer_name }},
 
-herzlichen Dank für deine Zahlung in der Höhe von {{ $payment->cost }}€, die wir auf deinem Kundenkonto gutgeschrieben haben.
+herzlichen Dank für deine Zahlung in der Höhe von {{ $payment->amount }}€, die wir auf deinem Kundenkonto gutgeschrieben haben.
 
 Viel Freude und weiterhin viel Spaß beim Entdecken auf kidwedo.de.
 

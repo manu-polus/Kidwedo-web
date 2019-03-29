@@ -23,6 +23,7 @@ use URL;
 use App\User;
 use App\payments;
 use App\Purchase;
+use Mail;
 
 class PaymentController extends Controller
 {
@@ -177,6 +178,12 @@ class PaymentController extends Controller
                 ]);
 
             $data['payment'] = $payinfo;
+
+            Mail::send('mail.payment_confirmed', ['customer' => $payinfo], function ($m) use ($user) {
+                $m->from('hello@kidwedo.de', 'Kidwedo');
+                $m->to(Auth::user()->email, Auth::user()->name)->subject('Bestätigung der Zahlung');
+            });
+
             //return redirect()->route('paymentinfo',['id' => $payinfo->id]);
             return view('payment',$data);
         }
